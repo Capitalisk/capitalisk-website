@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400&display=swap');
+
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: rgb(13, 54, 84);
+  --ifm-color-primary-dark: #11466d;
+  --ifm-color-primary-darker: #0f3e61;
+  --ifm-color-primary-darkest: #0e3b5c;
+  --ifm-color-primary-light: #0c314c;
+  --ifm-color-primary-lighter: #0b2e47;
+  --ifm-color-primary-lightest: #09263b;
+  --ifm-code-font-size: 95%;
+  --ifm-link-hover-decoration: none;
+  --ifm-font-family-base: 'Bai Jamjuree', sans-serif;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.custom-row {
+  display: flex;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  // margin: 20px;
+  .custom-column {
+    padding: 15px;
+    // flex: 1 1 auto;
+    flex: 0 0 33%;
+    border: 1px solid var(--ifm-color-primary);
+    border-radius: 10px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
