@@ -19,10 +19,14 @@ module.exports = {
         {
           to: 'docs/',
           activeBasePath: 'docs',
-          label: 'Docs',
+          label: 'Guide',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {to: 'docs/timeline', label: 'Timeline', position: 'left'},
+        {to: 'docs/roadmap', label: 'Roadmap', position: 'left'},
+        {to: 'docs/ito', label: 'ITO', position: 'left'},
+        {to: 'docs/wallet', label: 'Wallet', position: 'left'},
+        {href: 'https://explorer.capitalisk.com', label: 'Explorer', position: 'right'},
         // {
         //   href: 'https://github.com/facebook/docusaurus',
         //   label: 'GitHub',
@@ -89,7 +93,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Capitalisk, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Capitalisk.`,
     },
   },
   presets: [
@@ -99,14 +103,14 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          // editUrl:
+          //   'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          // editUrl:
+          //   'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
