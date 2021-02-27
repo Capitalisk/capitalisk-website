@@ -34,7 +34,7 @@ jobs:
           pip install awscli
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}/
+          aws s3 sync build/ s3://${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}/
       # This can be added in the future
       # - name: Invalidate CloudFront
       #   run: |
