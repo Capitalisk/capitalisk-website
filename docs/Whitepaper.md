@@ -12,7 +12,7 @@ Capitalisk was designed from the ground up to have the following characteristics
 - Deflationary token supply.
 - Signature scheme which is resistant to quantum computing algorithms.
 - Signature scheme which is stateful and supports novel features such as changing wallet passphrases.
-- Dynamic multisig wallets whose memberships can change over time based on group consensus (optimized for DEX and other DAO use cases).
+- Dynamic multisig wallets whose memberships can change over time (ideal for DEX and other DAO use cases).
 - Serve as a fundraising platform for new tokens to be listed on LDEX.
 - Serve as a blueprint for new kinds of Lisk and Leasehold sidechains.
 
