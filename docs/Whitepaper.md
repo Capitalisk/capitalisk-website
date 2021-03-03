@@ -4,7 +4,7 @@
 
 ### 1.1 Overview
 
-Capitalisk (CLSK) is designed to serve as a general purpose token for the LDEX federation https://ldex.trading/ in order to create incentives for collaboration around the LDEX, Leasehold and Lisk ecosystem. Capitalisk is optimized for maximum compatibility with LDEX and other federations built with the `lisk-dex` SDK.
+Capitalisk (CLSK) is designed to serve as a general purpose token for the LDEX federation https://ldex.trading/ in order to promote the growth and adoption of DEX markets within the Lisk and Leasehold ecosystems. Capitalisk is optimized for maximum compatibility with LDEX and other federations built with the `lisk-dex` SDK.
 
 Capitalisk was designed from the ground up to have the following characteristics:
 
@@ -12,7 +12,7 @@ Capitalisk was designed from the ground up to have the following characteristics
 - Deflationary token supply.
 - Signature scheme which is resistant to quantum computing algorithms.
 - Signature scheme which is stateful and supports novel features such as changing wallet passphrases.
-- Dynamic multisig wallets whose memberships can change over time (ideal for DEX and other DAO use cases).
+- Dynamic multisig wallets whose memberships can change over time (e.g. for DEX and other DAO use cases).
 - Serve as a fundraising platform for new tokens to be listed on LDEX.
 - Serve as a blueprint for new kinds of Lisk and Leasehold sidechains.
 
