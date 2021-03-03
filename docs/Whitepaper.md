@@ -50,20 +50,19 @@ It spawns modules automatically by reading a `config.json` file which contains t
 
 Capitalisk offers a novel feature called `Custom Module Templating` - This allows the source code of any single module to be used to spawn multiple different instances which can run alongside each other in parallel on different CPU cores (without slowing each other down).
 
-Each custom module config should specify a `modulePath` which tells LDEM which custom module source to use as the basis/blueprint for a custom module instance.
-This allows node operators to easily spawn entirely new blockchains by re-using existing custom module code with new configurations.
-For example, any group of node operators could launch an entirely new blockchain in a few minutes on their existing nodes by adding a new custom module config entry which points to `ldpos-chain` as the `modulePath`.
+Each custom module config should specify a `modulePath` which tells LDEM which custom module source to use as the template/blueprint for a custom module instance.
+This allows node operators to easily spawn new blockchains by re-using existing custom module source with different configurations.
+For example, a group of node operators could launch a new blockchain in a few minutes on their existing nodes by adding a new module config object in their `config.json` file.
 
-This approach can also be used for creating new DEX markets with different configs (I.e. to provide trading between different blockchains).
-In this case, the `modulePath` would need to point to the `lisk-dex` source code.
+This approach can also be used for creating new DEX markets (I.e. to provide trading between different sidechains).
 
-LDEM ensures that nodes which have matching modules will automatically find each other over the Lisk network and form a subnet.
+LDEM ensures that nodes which have matching modules will automatically find each other over the Lisk network and form a subnet with each other.
 
 ### 2.4 Scalability
 
-The Capitalisk ecosystem can scale linearly without limit via a multi-chain 'sidechain' architecture. Any blockchain which is directly or indirectly connected to CLSK via a DEX market can be traded against CLSK in a decentralized way. Cross-chain trades leave behind a complete and immutable on-chain history which can be used to trustlessly determine the relative price and daily volume of any two connected blockchains at any point in history. This feature, combined with `Custom Module Templating` can allow front end applications to interact with different blockchains via the same set of APIs and thus applications should be able to accept different tokens interchangeably (and possibly scaling the price up or down based on daily volume).
+The Capitalisk ecosystem can scale linearly without limit via a multi-chain 'sidechain' architecture. Any blockchain which is directly or indirectly connected to CLSK via a DEX market can be traded against CLSK in a decentralized way. Cross-chain trades leave behind a complete and immutable on-chain history which can be used to trustlessly determine the relative price and daily volume of any two connected blockchains at any point in history. This feature, combined with `Custom Module Templating` can allow front end applications to interact with different blockchains via the same set of APIs and, therefore, applications should be able to accept different tokens interchangeably (and possibly adjusting the price up or down based on daily volume).
 
-We believe that the approach of accepting many different tokens interchangeably will become a profitable strategy for merchants in the future as low volume tokens could potentially be accepted at a steep discount. It could create a highly competitive technical landscape for various entities to correctly assess the trustworthiness and reliability of these low-volume tokens.
+We believe that the approach of accepting many different tokens interchangeably will become a profitable strategy for merchants in the future as low volume tokens could potentially be accepted at a steep discount. It could create a highly competitive landscape for various entities to correctly assess the trustworthiness and reliability of these low-volume tokens.
 
 ### 2.5 Token supply
 
