@@ -111,24 +111,40 @@ The maximum number of multisignature members allowed in Capitalisk is 100. A mul
 
 Multisig wallets in Capitalisk can add or remove members over time provided that a sufficient number of existing members agree and sign a new `registerMultisigWallet` transaction with the updated rules and/or members. Multisig wallets in Capitalisk are designed to facilitate the creation and operation of 'Federations'. Federations are intended to be the backbone of the Capitalisk economy. Multisig wallets can be used as a decentralized primitive on top of which custom logic can be implemented using custom modules.
 
-### 2.14 Transaction expiry
+### 2.14 Network topology
 
-Once a transaction is added to a block and written to the blockchain, any new transaction whose timestamp is older than the last processed transaction for that account will be rejected by the network. This ensures that any old transactions which may not have propagated correctly through the network (for whatever reason; e.g. insufficient fee) will become invalid as soon as a newer transaction is processed.
+Capitalisk is based on `lisk-p2p` and so its network partially overlaps with that of Lisk, Leasehold and potentially other Lisk-based blockchain built with `lisk-p2p`.
+This is made possible by the fact that nodes built on top of `LDEM` can run multiple blockchains at the same time. See section 2.3 for more info about custom modules and LDEM.
 
-For security reasons (to avoid reusing Lamport OTS keys), nodes will refuse any transaction which use an older key index than the last one which was recorded on the blockchain.
+Nodes in the Lisk network form a sparse but fully-connected graph within which each node has a limited partial view of the network. This ensures that the network can scale indefinitely relative to the total number of nodes. The network topology is unstructured (non-deterministic) and involves frequent peer shuffling - This makes it essentially impossible to analyze the network topology, particularly as the network gets bigger over time.
 
-### 2.15 Registering as a delegate
+### 2.15 P2P module-to-module routing
+
+`lisk-p2p` allows custom modules running on any node to communicate with other modules running on different nodes in the network using a simple URL-like routing scheme.
+This allows modules to form independent subnets with each other to share data and reach consensus among themselves without congesting the rest of the network.
+This subnet feature is particularly useful for sidechains, DEX federations and other kinds of dapps.
+
+### 2.16 Transaction propagation and pending queue
+
+Transactions are signed on the client-side. A signed transaction can then be broadcast to the network by sending it to any node in the network. If the transaction is valid, the transaction will propagate through the entire Capitalisk subnet. Transactions will be queued and ordered based on the specified fee.
+If an account sends multiple transactions within a short period of time, they will be bundled together in the pending queue to ensure that they are processed together - An account can therefore bump up the priority of an earlier pending transaction by submitting a second transaction with a higher fee.
+
+### 2.17 Invalidating all unprocessed transactions
+
+All previously signed but not yet submitted transactions from an account can easily be invalidated by shifting the account's `sigKeyIndex` forward by 128 via a `registerSigDetails` transaction. This ensures that these signed transactions cannot be broadcast to the network at a later date. Changing passphrases will also invalidate all previous unprocessed transactions.
+
+### 2.18 Registering as a delegate
 
 In order to forge blocks, an account must first register themselves as a delegate using a `registerForgingDetails` transaction.
 They must then compete with other delegates to secure as many votes as possible from CLSK token holders.
 
 The top 21 forgers with the highest vote weight (based on the total amount of tokens held by voters) will be able to forge blocks and earn transaction fees.
 
-### 2.16 Lite nodes
+### 2.19 Lite nodes
 
 In order to save disk space, a Capitalisk node may be run as a 'lite node'; in this configuration, the node will only store a subset of block signatures (the exact number can be configured). Once it is up to date at the latest block height, a lite node behaves the same as a regular node but it will not seed its data to full nodes for syncing purposes.
 
-### 2.17 Client usage considerations
+### 2.20 Client usage considerations
 
 The stateful nature of Capitalisk's signature scheme means that a key should not be re-used. To avoid this, a client needs to submit a 'next key index' along with each transaction - This allows the client to keep an on-chain record of which OTS key they should use next. For maximum security, clients must keep track of their own 'next key indexes' on their local host as well. The official JavaScript client provides a way to start signing from any key index. Skipping forward key indexes is allowed but going back is not (except after explicitly registering a new key/new passphrase). Clients auto-increment all key indexes whenever a new transaction is signed. For maximum security, it is strongly recommended to only make transactions from a single client machine at a time (per wallet address) in order to avoid key re-use. Note, however, that forging and signing multisig transactions can be done in parallel.
 
