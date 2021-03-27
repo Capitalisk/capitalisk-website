@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Capitalisk',
-  tagline: 'The coin of the future.',
+  tagline: 'Decentralized free market ecosystem',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -13,7 +13,7 @@ module.exports = {
       title: 'Capitalisk',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.png',
+        src: 'img/capitalisk-logo-icon.png',
       },
       items: [
         {

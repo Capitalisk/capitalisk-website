@@ -83,16 +83,15 @@ function Home() {
   const { siteConfig = {} } = context
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description='Description will go into a meta tag in <head />'
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
           <img
             className={styles.logoImg}
-            src={useBaseUrl('/img/logo-white.png')}
+            src={useBaseUrl('/img/capitalisk-logo-white.png')}
           />
-          <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
           <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link className={styles.button} to={useBaseUrl('docs/')}>

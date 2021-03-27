@@ -129,7 +129,7 @@ This subnet feature is particularly useful for sidechains, DEX federations and o
 Transactions are signed on the client-side. A signed transaction can then be broadcast to the network by sending it to any node in the network. If the transaction is valid, the transaction will propagate through the entire Capitalisk subnet. Transactions will be queued and ordered based on the specified fee.
 If an account sends multiple transactions within a short period of time, they will be bundled together in the pending queue to ensure that they are processed together - An account can therefore bump up the priority of an earlier pending transaction by submitting a second transaction with a higher fee.
 
-### 2.17 Invalidating all unprocessed transactions
+### 2.17 Invalidating unprocessed transactions
 
 All previously signed but not yet submitted transactions from an account can easily be invalidated by shifting the account's `sigKeyIndex` forward by 128 via a `registerSigDetails` transaction. This ensures that these signed transactions cannot be broadcast to the network at a later date. Changing passphrases will also invalidate all previous unprocessed transactions.
 
