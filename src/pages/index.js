@@ -8,35 +8,20 @@ import styles from './styles.module.scss'
 
 const features = [
   {
-    title: 'Vision',
+    title: 'Mission',
     imageUrl: '',
     description: (
       <>
-        Capitalisk (CLSK) was designed from the ground up to have the following
-        characteristics:
-        <ul>
-          <li>
-            Maximum compatibility with LDEX (https://ldex.trading/) and other
-            federations built with the `lisk-dex` SDK.
-          </li>
-          <li>
-            Simple DPoS (Delegated Proof of Stake) consensus with instant
-            finality.
-          </li>
-          <li>Deflationary token supply.</li>
-          <li>Signature scheme which is resistant to quantum algorithms.</li>
-          <li>
-            Signature scheme which is stateful and supports features such as
-            changing wallet passphrases.
-          </li>
-          <li>
-            Serves as a fundraising platform for new tokens to be listed on
-            LDEX.
-          </li>
-          <li>
-            Serves as a blueprint for future Lisk and Leasehold sidechains.
-          </li>
-        </ul>
+        <p>
+          Capitalisk (CLSK) is a cryptocurrency and multi-blockchain ecosystem.
+          The goal of Capitalisk is to allow any community, anywhere in the world, to launch a project or business venture as a cryptocurrency such that it can be traded against other cryptocurrencies within the ecosystem.
+        </p>
+        <p>
+          Capitalisk also aims to encourage participating businesses and individuals to flexibly accept many different tokens as a form of payment for goods and services denominated in any token within the ecosystem (automatically weighted based on relative value).
+        </p>
+        <p>
+          Capitalisk allows the relative value of any token in its ecosystem to be determined automatically and trustlessly thanks to permanent, decentralized on-chain records of trades left behind by Decentralized Exchanges (DEXs).
+        </p>
       </>
     ),
   },
@@ -45,22 +30,21 @@ const features = [
     imageUrl: '',
     description: (
       <>
-        Capitalisk is the first token built on top of LDPoS; a set of modules which implement a stateful, quantum-resistant DPoS (Delegated Proof of Stake) consensus algorithm.
-        Quantum resistance is achieved through the use of Lamport One-Time Signatures combined with Merkle Signature Trees to allow a single public key root hash to be reused multiple times.
-        The algorithm is stateful; a wallet's public key is changed every 64 transactions; this statefulness provides a number of unique features such as the ability for someone to change their wallet's passphrase.
+        <p>
+          The Capitalisk blockchain is highly energy-efficient thanks to its Delegated Proof of Stake (DPoS) consensus algorithm.
+        </p>
+        <p>
+          To guarantee the integrity of the ledger now and in the future, Capitalisk implements a stateful hash-based signature scheme which is resistant to quantum computing attacks.
+        </p>
+        <p>
+          The ecosystem relies on Decentralized Exchanges (DEXs) such as LDEX (<a href="https://ldex.trading/" target="_blank">https://ldex.trading/</a>) to provide a decentralized trading and conversion service between different blockchains.
+        </p>
+        <p>
+          Capitalisk solves the blockchain scalability problem by facilitating flexible hierarchical relationships between different blockchains with Capitalisk itself starting out as a sidechain of Lisk (<a href="https://lisk.io/" target="_blank">https://lisk.io/</a>).
+        </p>
       </>
     ),
   },
-  // {
-  //   title: 'Powered by React',
-  //   imageUrl: 'img/undraw_docusaurus_react.svg',
-  //   description: (
-  //     <>
-  //       Extend or customize your website layout by reusing React. Docusaurus can
-  //       be extended while reusing the same header and footer.
-  //     </>
-  //   ),
-  // },
 ]
 
 function Feature({ imageUrl, title, description }) {
