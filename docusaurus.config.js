@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Capitalisk',
-  tagline: 'Decentralized free market ecosystem',
+  tagline: 'Decentralized free markets',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
