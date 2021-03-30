@@ -23,7 +23,6 @@ module.exports = {
           position: 'left',
         },
         {to: 'docs/whitepaper', label: 'Whitepaper', position: 'left'},
-        {to: 'docs/ito', label: 'ITO', position: 'left'},
         {to: 'docs/wallet', label: 'Wallet', position: 'left'},
         {href: 'https://explorer.capitalisk.com', label: 'Explorer', position: 'right'},
         // {

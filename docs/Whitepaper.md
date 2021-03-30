@@ -1,3 +1,8 @@
+---
+id: whitepaper
+title: whitepaper
+---
+
 # Capitalisk Whitepaper
 
 ## 1. Economics

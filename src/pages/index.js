@@ -40,7 +40,7 @@ const features = [
           The ecosystem relies on Decentralized Exchanges (DEXs) such as LDEX (<a href="https://ldex.trading/" target="_blank">https://ldex.trading/</a>) to provide a decentralized trading and conversion service between different blockchains.
         </p>
         <p>
-          Capitalisk solves the blockchain scalability problem by facilitating flexible hierarchical relationships between different blockchains with Capitalisk itself starting out as a sidechain of Lisk (<a href="https://lisk.io/" target="_blank">https://lisk.io/</a>).
+          Capitalisk solves the blockchain scalability problem by facilitating flexible hierarchical relationships between different blockchains with Capitalisk itself launching as a sidechain of Lisk (<a href="https://lisk.io/" target="_blank">https://lisk.io/</a>).
         </p>
         <p>
           See the <a href="/docs/whitepaper">whitepaper</a> for a more detailed description of available features.
