@@ -13,9 +13,9 @@ const features = [
     description: (
       <>
         <p>
-          Capitalisk (CLSK) is a cryptocurrency and a multi-blockchain ecosystem.
+          Capitalisk (CLSK) is a cryptocurrency and a multi-blockchain ecosystem built on top of Lisk DEX (<a href="https://ldex.trading/" target="_blank">website</a>, <a href="https://github.com/Capitalisk/lisk-dex" target="_blank">GitHub repo</a>).
           The goal of Capitalisk is to allow any community, anywhere in the world, to launch a new cryptocurrency which can be traded against any other cryptocurrency within the ecosystem.
-          Capitalisk is intended to serve as a decentralized fundraising platform (venture capital) for new projects.
+          Capitalisk is also intended to serve as a decentralized fundraising platform (venture capital) for new projects.
         </p>
         <p>
           Capitalisk also aims to create incentives for individuals and businesses to flexibly accept many different kinds of tokens as a form of payment for goods and services which they provide. The goal is to allow different tokens to be weighted automatically based on their relative values.
