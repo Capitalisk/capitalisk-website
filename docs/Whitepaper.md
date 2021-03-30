@@ -9,7 +9,7 @@ title: whitepaper
 
 ### 1.1 Overview
 
-Capitalisk (CLSK) is a general purpose token designed to promote the growth and adoption of DEX markets within the Lisk and Leasehold ecosystems and to promote collaboration between different DEX federations. It is intended to serve as a fundraising platform (Decentralized Venture Capital) for new tokens to be listed on various DEX markets - Its underlying technology should also serve as a blueprint for new kinds of Lisk and Leasehold sidechains. Capitalisk is optimized for maximum compatibility with LDEX https://ldex.trading/ and other federations built with the `lisk-dex` SDK.
+Capitalisk (CLSK) is a general purpose token designed to promote the growth and adoption of DEX markets within the Lisk (https://lisk.io/) and Leasehold (https://leasehold.io/) ecosystems and to promote collaboration between different DEX federations. It is intended to serve as a fundraising platform (Decentralized Venture Capital) for new tokens to be listed on various DEX markets - Its underlying technology should also serve as a blueprint for new kinds of Lisk and Leasehold sidechains. Capitalisk is optimized for maximum compatibility with LDEX (https://ldex.trading/) and other federations built with the `lisk-dex` SDK.
 
 Capitalisk was designed from the ground up to have the following characteristics:
 
