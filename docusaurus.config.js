@@ -19,10 +19,9 @@ module.exports = {
         {
           to: 'docs/',
           activeBasePath: 'docs',
-          label: 'Guide',
+          label: 'Docs',
           position: 'left',
         },
-        {to: 'docs/timeline', label: 'Timeline', position: 'left'},
         {to: 'docs/whitepaper', label: 'Whitepaper', position: 'left'},
         {to: 'docs/ito', label: 'ITO', position: 'left'},
         {to: 'docs/wallet', label: 'Wallet', position: 'left'},
@@ -43,10 +42,6 @@ module.exports = {
             {
               label: 'Style Guide',
               to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
             },
           ],
         },
@@ -84,7 +79,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/leasehold',
+              href: 'https://github.com/Capitalisk',
             },
             {
               label: 'Leasehold',

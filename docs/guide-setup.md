@@ -1,7 +1,7 @@
 ---
-id: doc1
+id: guide-setup
 title: Setting up capitalisk node
-sidebar_label: Capitalisk Node
+sidebar_label: Setting up a node
 slug: /
 ---
 
@@ -19,16 +19,16 @@ nvm install 12.18.2
 ```
 - To install nvm on windows, follow https://github.com/coreybutler/nvm-windows
 
-# Clone the capitalisk-core 
+# Clone the capitalisk-core
 ```shell script
 git clone https://github.com/Capitalisk/capitalisk-core
 ```
 - At project root, execute command
 ```shell script
-nvm use 
+nvm use
 ```
 
-# Start the node 
+# Start the node
 1. Starting testnet node
 - Make sure docker installed on the system https://docs.docker.com/get-docker/
 - To install docker on linux follow - https://docs.docker.com/engine/install/ubuntu/
@@ -38,7 +38,7 @@ yarn start postgres:testnet:start
 ```
 - Overwrite testnet config from templates/config-testnet.json to root config.json & start the node
 ```shell script
-cat templates/config-testnet.json > config.json 
+cat templates/config-testnet.json > config.json
 yarn start
 ```
 - Wait for 5 mins for node to sync (Ignoring initial warnings/errors)
