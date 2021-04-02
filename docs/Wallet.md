@@ -40,7 +40,7 @@ ldpos
 
 You can also add a `--help` flag (non-interactively) to get a list of all available commands and options (both interactive and non-interactive).
 
-After the interactive session has been started, you can get the full list of available commands using the `help` interactive command.
+After the interactive session has been started, you can get the full list of available commands using the `help` command.
 
 ### GitHub
 
