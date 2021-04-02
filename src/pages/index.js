@@ -109,7 +109,7 @@ function Home() {
           <div className='flex justify-center'>
             <div
               className='flex align-center row'
-              style={{ width: '400px', textAlign: 'left', marginRight: '4rem' }}
+              style={{ width: '400px', textAlign: 'left', marginRight: '5rem' }}
             >
               <h1 className={styles.heroSubtitle}>{siteConfig.tagline}</h1>
               <div className="text-white">
@@ -127,7 +127,8 @@ function Home() {
             </div>
             <img
               className={styles.logoImg}
-              src={useBaseUrl('/img/capitalisk-chain-respresentation.png')}
+              // src={useBaseUrl('/img/capitalisk-chain-respresentation.png')}
+              src={useBaseUrl('/img/logo-white.svg')}
             />
           </div>
         </div>
