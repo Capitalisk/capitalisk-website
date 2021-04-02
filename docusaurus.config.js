@@ -25,13 +25,13 @@ module.exports = {
           className: 'nav-item',
         },
         {
-          to: 'docs/whitepaper',
+          to: 'whitepaper',
           label: 'WHITEPAPER',
           position: 'left',
           className: 'nav-item',
         },
         {
-          to: 'docs/wallet',
+          to: 'wallet',
           label: 'WALLET',
           position: 'left',
           className: 'nav-item',

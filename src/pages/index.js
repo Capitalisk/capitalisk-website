@@ -127,8 +127,8 @@ function Home() {
             </div>
             <img
               className={styles.logoImg}
-              // src={useBaseUrl('/img/capitalisk-chain-respresentation.png')}
-              src={useBaseUrl('/img/logo-white.svg')}
+              src={useBaseUrl('/img/capitalisk-chain-respresentation.png')}
+              // src={useBaseUrl('/img/logo-white.svg')}
             />
           </div>
         </div>
