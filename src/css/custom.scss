@@ -9,7 +9,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: rgb(13, 54, 84);
+  --ifm-color-primary: #2f80ed;
   --ifm-color-primary-dark: #11466d;
   --ifm-color-primary-darker: #0f3e61;
   --ifm-color-primary-darkest: #0e3b5c;
@@ -27,6 +27,26 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.text-white {
+  color: white;
 }
 
 .custom-row {

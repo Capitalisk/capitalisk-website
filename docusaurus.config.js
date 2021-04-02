@@ -14,6 +14,7 @@ module.exports = {
       logo: {
         alt: 'My Site Logo',
         src: 'img/capitalisk-logo-icon.png',
+        srcDark: 'img/logo-white.svg',
       },
       items: [
         {
@@ -22,9 +23,13 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'docs/whitepaper', label: 'Whitepaper', position: 'left'},
-        {to: 'docs/wallet', label: 'Wallet', position: 'left'},
-        {href: 'https://explorer.capitalisk.com', label: 'Explorer', position: 'right'},
+        { to: 'docs/whitepaper', label: 'Whitepaper', position: 'left' },
+        { to: 'docs/wallet', label: 'Wallet', position: 'left' },
+        {
+          href: 'https://explorer.capitalisk.com',
+          label: 'Explorer',
+          position: 'left',
+        },
         // {
         //   href: 'https://github.com/facebook/docusaurus',
         //   label: 'GitHub',
@@ -65,8 +70,8 @@ module.exports = {
             },
             {
               label: 'Reddit',
-              href: 'https://www.reddit.com/r/Leasehold/'
-            }
+              href: 'https://www.reddit.com/r/Leasehold/',
+            },
           ],
         },
         {
