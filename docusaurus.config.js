@@ -105,6 +105,11 @@ module.exports = {
           ],
         },
       ],
+      logo: {
+        alt: 'Capitalisk',
+        src: 'img/logo-grey.png',
+        href: 'https://capitalisk.com',
+      },
       copyright: `Copyright © ${new Date().getFullYear()} Capitalisk.`,
     },
   },
