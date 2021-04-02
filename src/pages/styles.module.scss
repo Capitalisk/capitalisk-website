@@ -25,6 +25,9 @@
   height: 450px;
   width: auto;
   margin-left: 2.5rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .button {
@@ -43,6 +46,7 @@
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
+    height: auto;
   }
 }
 
