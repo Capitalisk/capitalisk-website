@@ -53,6 +53,17 @@
   font-weight: 900;
 }
 
+.footer {
+  position: relative;
+}
+
+.footer__logo {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  margin-top: 0;
+}
+
 .custom-row {
   display: flex;
   // flex-direction: column;

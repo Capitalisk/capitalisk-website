@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 const features = [
   {
     title: 'Economics',
-    imageUrl: '',
+    imageUrl: 'img/economics-icon.svg',
     description: (
       <>
         <p>
@@ -44,7 +44,7 @@ const features = [
   },
   {
     title: 'Technology',
-    imageUrl: '',
+    imageUrl: 'img/technology-icon.svg',
     description: (
       <>
         <p>
@@ -86,8 +86,10 @@ function Feature({ imageUrl, title, description }) {
   return (
     <div className='col col-4'>
       {imgUrl && (
-        <div className='text--center'>
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+        <div className='flex justify-center'>
+          <div className={styles.featureImageDiv}>
+            <img className={styles.featureImage} src={imgUrl} alt={title} />
+          </div>
         </div>
       )}
       <h3>{title}</h3>
@@ -112,7 +114,7 @@ function Home() {
               style={{ width: '400px', textAlign: 'left', marginRight: '5rem' }}
             >
               <h1 className={styles.heroSubtitle}>{siteConfig.tagline}</h1>
-              <div className="text-white">
+              <div className='text-white'>
                 The Capitalisk blockchain is highly energy-efficient thanks to
                 its Delegated Proof of Stake (DPoS) consensus algorithm. To
                 guarantee the integrity of the ledger, Capitalisk implements a
