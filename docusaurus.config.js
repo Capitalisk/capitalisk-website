@@ -12,7 +12,7 @@ module.exports = {
     navbar: {
       title: 'Capitalisk',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Capitalisk Logo',
         src: 'img/capitalisk-logo-icon.png',
         srcDark: 'img/logo-white.svg',
       },
@@ -21,24 +21,24 @@ module.exports = {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'DOCS',
-          position: 'left',
+          position: 'right',
           className: 'nav-item',
         },
         {
           to: 'whitepaper',
           label: 'WHITEPAPER',
-          position: 'left',
-          className: 'nav-item',
-        },
-        {
-          to: 'wallet',
-          label: 'WALLET',
-          position: 'left',
+          position: 'right',
           className: 'nav-item',
         },
         {
           href: 'https://github.com/Capitalisk',
           label: 'GITHUB',
+          position: 'right',
+          className: 'nav-item',
+        },
+        {
+          to: 'wallet',
+          label: 'WALLET',
           position: 'right',
           className: 'nav-item',
         },
@@ -54,11 +54,32 @@ module.exports = {
       style: 'light',
       links: [
         {
-          title: 'Docs',
+          title: 'Products',
           items: [
             {
-              label: 'Guides',
+              label: 'Wallet',
+              to: 'wallet/',
+            },
+            {
+              label: 'Exchange',
+              to: 'wallet/',
+            },
+          ],
+        },
+        {
+          title: 'Developers',
+          items: [
+            {
+              label: 'Documentation',
               to: 'docs/',
+            },
+            {
+              label: 'Github',
+              to: 'https://github.com/Capitalisk',
+            },
+            {
+              label: 'Whitepaper',
+              to: 'whitepaper/'
             },
           ],
         },
@@ -88,20 +109,16 @@ module.exports = {
           ],
         },
         {
-          title: 'More',
+          title: 'About',
           items: [
             {
               label: 'Blog',
               to: 'blog',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/Capitalisk',
-            },
-            {
-              label: 'Leasehold',
-              href: 'https://leasehold.io',
-            },
+              label: 'FAQ\'s',
+              to: 'wallet/',
+            }
           ],
         },
       ],
