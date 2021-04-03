@@ -1,7 +1,7 @@
 ---
 id: guide-setup
 title: Setting up a Capitalisk node
-sidebar_label: Setting up a node
+sidebar_label: Capitalisk
 slug: /
 ---
 
