@@ -21,24 +21,24 @@ module.exports = {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'DOCS',
-          position: 'right',
+          position: 'left',
           className: 'nav-item',
         },
         {
           to: 'whitepaper',
           label: 'WHITEPAPER',
-          position: 'right',
-          className: 'nav-item',
-        },
-        {
-          href: 'https://github.com/Capitalisk',
-          label: 'GITHUB',
-          position: 'right',
+          position: 'left',
           className: 'nav-item',
         },
         {
           to: 'wallet',
           label: 'WALLET',
+          position: 'left',
+          className: 'nav-item',
+        },
+        {
+          href: 'https://github.com/Capitalisk',
+          label: 'GITHUB',
           position: 'right',
           className: 'nav-item',
         },
@@ -86,25 +86,25 @@ module.exports = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
+            // {
+            //   label: 'Stack Overflow',
+            //   href: 'https://stackoverflow.com/questions/tagged/capitalisk',
+            // },
             {
               label: 'Discord',
               href: 'https://discord.gg/8bJHhvU',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/LeaseholdHQ',
+              href: 'https://twitter.com/CapitaliskHQ',
             },
             {
               label: 'Telegram',
-              href: 'https://t.me/Leaseholdchat',
+              href: 'https://t.me/CapitaliskHQ',
             },
             {
               label: 'Reddit',
-              href: 'https://www.reddit.com/r/Leasehold/',
+              href: 'https://www.reddit.com/r/Capitalisk/',
             },
           ],
         },
