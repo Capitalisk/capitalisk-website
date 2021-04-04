@@ -119,27 +119,4 @@
     margin-right: 20%;
   }
 
-  .nav-item:hover:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -13px;
-
-    height: 4px;
-    background-color: var(--ifm-color-primary);
-    content: '';
-    z-index: 2;
-  }
-
-  .navbar__link--active:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -13px;
-
-    height: 2px;
-    background-color: var(--ifm-color-primary);
-    content: '';
-    z-index: 2;
-  }
 }
