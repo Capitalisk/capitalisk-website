@@ -13,7 +13,7 @@
   --ifm-color-primary-dark: #11466d;
   --ifm-color-primary-darker: #0f3e61;
   --ifm-color-primary-darkest: #0e3b5c;
-  --ifm-color-primary-light: #0c314c;
+  --ifm-color-primary-light: #2c4491;
   --ifm-color-primary-lighter: #0b2e47;
   --ifm-color-primary-lightest: #09263b;
   --ifm-code-font-size: 95%;
@@ -86,10 +86,34 @@
   }
 }
 
+.react-toggle {
+  margin-left: 1rem;
+}
+
+.external-nav-item {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  margin-left: 1rem;
+  margin-right: -.5rem;
+  border-radius: 50px;
+}
+
+.external-nav-item:hover {
+  color: white;
+  transform: translate3d(1px, 1px, 1px);
+}
+
 @media screen and (min-width: 997px) {
+  .navbar__brand {
+    margin-left: 30%;
+  }
+
+  .react-toggle {
+    margin-right: 20%;
+  }
+
   .nav-item:hover:after {
     position: absolute;
-    // top: -10px;
     left: 0;
     right: 0;
     bottom: -13px;
@@ -102,7 +126,6 @@
 
   .navbar__link--active:after {
     position: absolute;
-    // top: -10px;
     left: 0;
     right: 0;
     bottom: -13px;
