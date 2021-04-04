@@ -94,15 +94,22 @@
   background-color: var(--ifm-color-primary);
   color: white;
   margin-left: 1rem;
-  margin-right: -.5rem;
+  margin-right: -0.5rem;
   border-radius: 50px;
 }
 
 .external-nav-item:hover {
   color: white;
-  transform: translate3d(1px, 1px, 1px);
 }
 
+// MOBILE
+@media screen and (max-width: 996px) {
+  .external-nav-item {
+    margin: 0;
+  }
+}
+
+// DESKTOP
 @media screen and (min-width: 997px) {
   .navbar__brand {
     margin-left: 30%;

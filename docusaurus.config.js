@@ -30,15 +30,16 @@ module.exports = {
           position: 'right',
           className: 'nav-item',
         },
+        // {
+        //   to: 'blog/',
+        //   activeBasePath: 'blog',
+        //   label: 'BLOG',
+        //   position: 'right',
+        //   className: 'nav-item',
+        // },
         {
           to: 'wallet',
           label: 'WALLET',
-          position: 'right',
-          className: 'nav-item',
-        },
-        {
-          href: 'https://github.com/Capitalisk',
-          label: 'GITHUB',
           position: 'right',
           className: 'external-nav-item',
         },
