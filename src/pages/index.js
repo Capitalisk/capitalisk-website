@@ -73,7 +73,7 @@ const features = [
           ).
         </p>
         <p>
-          See the <a href='/docs/whitepaper'>whitepaper</a> for a more detailed
+          See the <a href='/whitepaper'>whitepaper</a> for a more detailed
           description of available features.
         </p>
       </>
