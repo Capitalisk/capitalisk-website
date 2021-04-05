@@ -20,6 +20,7 @@
   --ifm-link-hover-decoration: none;
   --ifm-font-family-base: 'Bai Jamjuree', sans-serif;
   --ifm-container-width: 1200px;
+  --ifm-navbar-height: 76px;
 }
 
 .docusaurus-highlight-code-line {
@@ -100,10 +101,6 @@
 
 .external-nav-item:hover {
   color: white;
-}
-
-.navbar {
-  height: 76px;
 }
 
 .navbar__brand {
