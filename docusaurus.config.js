@@ -10,11 +10,10 @@ module.exports = {
   projectName: 'capitalisk-site', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Capitalisk',
       logo: {
-        alt: 'Capitalisk Logo',
-        src: 'img/capitalisk-logo-icon.png',
-        srcDark: 'img/logo-white.svg',
+        alt: 'Capitalisk',
+        src: 'img/capitalisk-logo-horizontal.png',
+        srcDark: 'img/capitalisk-logo-horizontal-white.png',
       },
       items: [
         {

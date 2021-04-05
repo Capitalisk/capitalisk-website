@@ -102,10 +102,21 @@
   color: white;
 }
 
+.navbar {
+  height: 76px;
+}
+
+.navbar__brand {
+  height: 2.5rem;
+}
+
 // MOBILE
 @media screen and (max-width: 996px) {
   .external-nav-item {
     margin: 0;
+  }
+  .navbar-sidebar__brand {
+    height: 76px;
   }
 }
 
