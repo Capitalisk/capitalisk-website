@@ -93,7 +93,7 @@ module.exports = {
             // },
             {
               label: 'Discord',
-              href: 'https://discord.gg/8bJHhvU',
+              href: 'https://discord.gg/8rMacvN9',
             },
             {
               label: 'Twitter',
@@ -101,7 +101,7 @@ module.exports = {
             },
             {
               label: 'Telegram',
-              href: 'https://t.me/CapitaliskHQ',
+              href: 'https://t.me/Capitalisk',
             },
             {
               label: 'Reddit',
