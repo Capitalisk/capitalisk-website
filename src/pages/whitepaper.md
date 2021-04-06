@@ -48,7 +48,7 @@ The algorithm is stateful; a wallet's public key is changed every 64 transaction
 
 ### 2.2 Custom modules
 
-Capitalisk is implemented as a custom module which runs on top of LDEM https://github.com/jondubois/ldem.
+Capitalisk is implemented as a custom module which runs on top of LDEM https://github.com/Capitalisk/ldem.
 LDEM is a multi-process engine designed to run custom modules across multiple CPU cores for maximum scalability.
 It spawns modules automatically by reading a `config.json` file which contains the definitions and configurations for each module.
 
