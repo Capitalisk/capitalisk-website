@@ -95,7 +95,7 @@ An account passphrase is a 12-word mnemonic known only to the account owner (e.g
 The passphrase is used to derive a secret seed which can then be used to generate Lamport OTS key pairs on demand to sign transactions.
 The signature seeding algorithm has some similarities with that of IOTA but, among several key differences, it uses Lamport OTS instead of Winternitz OTS. Lamport OTS supports faster signature creation and verification but at the expense of a larger signature size.
 
-Signatures in Capitalisk are around 15KB in size. In order to save storage space, nodes verify the full signature but only store the signature hash - With this approach, it's still possible for any account holders to cryptographically prove or disprove the validity of any past transaction.
+Signatures in Capitalisk are around 15KB in size. In order to save storage space, nodes verify the full signature but only store the signature hash - With this approach, it's still possible for any account holder to cryptographically prove or disprove the validity of any past transaction.
 
 An account's passphrase can be changed at will by sending a valid `registerSigDetails` transaction signed using the account's current passphrase.
 
