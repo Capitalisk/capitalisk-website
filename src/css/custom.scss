@@ -20,6 +20,7 @@
   --ifm-link-hover-decoration: none;
   --ifm-font-family-base: 'Roboto', sans-serif;
   --ifm-container-width: 1200px;
+  --ifm-navbar-height: 76px;
 }
 
 .hero {
@@ -121,7 +122,7 @@ h6,
   margin-left: 16px;
   border-radius: 5px;
   font-weight: 600;
-  padding: 4px 24px;
+  padding: 8px 24px;
   font-size: 14px;
 }
 
@@ -133,10 +134,17 @@ h6,
   color: white;
 }
 
+.navbar__brand {
+  height: 2.5rem;
+}
+
 // MOBILE
 @media screen and (max-width: 996px) {
   .external-nav-item {
     margin: 0;
+  }
+  .navbar-sidebar__brand {
+    height: 76px;
   }
 }
 

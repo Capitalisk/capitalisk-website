@@ -73,7 +73,7 @@ const features = [
           ).
         </p>
         <p>
-          See the <a href='/docs/whitepaper'>whitepaper</a> for a more detailed
+          See the <a href='/whitepaper'>whitepaper</a> for a more detailed
           description of available features.
         </p>
       </>
@@ -93,7 +93,7 @@ function Feature({ imageUrl, title, description }) {
         </div>
       )}
       <h3>{title}</h3>
-      <p>{description}</p>
+      <span>{description}</span>
     </div>
   );
 }
@@ -115,11 +115,10 @@ function Home() {
             >
               <h1 className={styles.heroSubtitle}>{siteConfig.tagline}</h1>
               <div className='text-white'>
-                The Capitalisk blockchain is highly energy-efficient thanks to
-                its Delegated Proof of Stake (DPoS) consensus algorithm. To
-                guarantee the integrity of the ledger, Capitalisk implements a
-                stateful hash-based signature scheme which is resistant to
-                quantum computing attacks.
+                Capitalisk is an energy-efficient Delegated Proof of Stake (DPoS) blockchain
+                which is resistant to quantum computing attacks.
+                Capitalisk is centered around Lisk DEX; a technology which allows any group of people to launch
+                decentralized markets for trading across any blockchain within the ecosystem.
               </div>
               <div className={styles.buttons}>
                 <Link className={styles.button} to={useBaseUrl('docs/')}>
