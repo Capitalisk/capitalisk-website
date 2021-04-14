@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Capitalisk',
   tagline: 'Decentralized free markets',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://capitalisk.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -10,11 +10,11 @@ module.exports = {
   projectName: 'capitalisk-site', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Capitalisk',
+      title: '',
       logo: {
         alt: 'Capitalisk Logo',
-        src: 'img/capitalisk-logo-icon.png',
-        srcDark: 'img/logo-white.svg',
+        src: 'img/nav-logo.png',
+        srcDark: 'img/nav-logo-dark.png',
       },
       items: [
         {

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400&display=swap');
+@import url('http://fonts.cdnfonts.com/css/gilroy-bold');
 
 /* stylelint-disable docusaurus/copyright-header */
 /**
@@ -18,8 +18,31 @@
   --ifm-color-primary-lightest: #09263b;
   --ifm-code-font-size: 95%;
   --ifm-link-hover-decoration: none;
-  --ifm-font-family-base: 'Bai Jamjuree', sans-serif;
+  --ifm-font-family-base: 'Roboto', sans-serif;
   --ifm-container-width: 1200px;
+}
+
+.hero {
+  background: linear-gradient(
+      0deg,
+      rgba(12,21,46,0.8),
+      rgba(12,21,46,0.8)
+    ),
+    url('https://source.unsplash.com/random/1920x1080?skyscrapers');
+}
+
+code {
+  color: var(--ifm-color-primary)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.footer__title {
+  font-family: 'Girloy', sans-serif;
 }
 
 .docusaurus-highlight-code-line {
@@ -52,7 +75,9 @@
 
 .nav-item {
   position: relative;
-  font-weight: 900;
+  font-weight: 600;
+  font-family: 'Girloy', sans-serif;
+  font-size: 14px;
 }
 
 .footer {
@@ -93,9 +118,15 @@
 .external-nav-item {
   background-color: var(--ifm-color-primary);
   color: white;
-  margin-left: 1rem;
-  margin-right: -0.5rem;
-  border-radius: 50px;
+  margin-left: 16px;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 4px 24px;
+  font-size: 14px;
+}
+
+.copyButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock- {
+  background-color: var(--ifm-color-primary);
 }
 
 .external-nav-item:hover {
@@ -118,5 +149,4 @@
   .react-toggle {
     margin-right: 20%;
   }
-
 }
