@@ -58,7 +58,9 @@ Capitalisk offers a novel feature called `Custom Module Templating` - This allow
 
 Each custom module config should specify a `modulePath` which tells LDEM which source code to use as the template/blueprint for a custom module instance.
 This allows node operators to easily spawn new blockchains by re-using existing source code with different configurations.
-For example, a group of node operators could launch a completely new blockchain in a few minutes on their existing nodes by adding a new config object to their `config.json` file.
+For example, a group of node operators could launch a new blockchain in a few minutes on their existing nodes by each adding a config JSON object inside their `config.json` file. The new blockchain can be based on an entirely new custom module or it can share its custom module with another blockchain like this:
+
+![Custom module templating diagram](/img/custom-module-templating-medium.png)
 
 This approach of creating new blockchains can also be used for creating new DEX markets (I.e. to immediately support trading for those newly created blockchains).
 
@@ -67,6 +69,8 @@ LDEM ensures that nodes which have matching modules will automatically find each
 ### 2.4 Scalability
 
 The Capitalisk ecosystem can scale linearly without limit via a multi-chain 'sidechain' architecture. Any blockchain which is directly or indirectly connected to CLSK via a DEX market can be traded against CLSK in a decentralized way. Cross-chain trades made via the DEX leave behind a complete and immutable on-chain history which can be used to trustlessly determine the price and daily volume between any two connected blockchains at any point in history. This feature, combined with `Custom Module Templating` can allow front end applications to interact with different blockchains via the same set of APIs. The purpose of this is to encourage third-party applications to accept different tokens interchangeably (and possibly adjusting the price up or down based on market volumes).
+
+![Multi-chain architecture](/img/multi-chain-architecture-medium.png)
 
 We believe that the approach of accepting many different tokens interchangeably will become a profitable strategy for merchants in the future as low volume tokens could potentially be accepted at a steep discount and also incur lower transaction fees. It could create a highly competitive landscape for third-party entities to correctly assess the trustworthiness and reliability of low-volume tokens.
 
