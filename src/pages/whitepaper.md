@@ -68,9 +68,9 @@ LDEM ensures that nodes which have matching modules will automatically find each
 
 ### 2.4 Scalability
 
-The Capitalisk ecosystem can scale linearly without limit via a multi-chain 'sidechain' architecture. Any blockchain which is directly or indirectly connected to CLSK via a DEX market can be traded against CLSK in a decentralized way. Cross-chain trades made via the DEX leave behind a complete and immutable on-chain history which can be used to trustlessly determine the price and daily volume between any two connected blockchains at any point in history. This feature, combined with `Custom Module Templating` can allow front end applications to interact with different blockchains via the same set of APIs. The purpose of this is to encourage third-party applications to accept different tokens interchangeably (and possibly adjusting the price up or down based on market volumes).
+The Capitalisk ecosystem can scale linearly without limit via a multi-chain 'sidechain' architecture. Any blockchain which is directly or indirectly connected to CLSK via a DEX market can be traded against CLSK in a decentralized way.
 
-![Multi-chain architecture](/img/multi-chain-architecture-medium.png)
+Cross-chain trades made via the DEX leave behind a complete and immutable on-chain history which can be used to trustlessly determine the price and daily volume between any two connected blockchains at any point in history. This feature, combined with `Custom Module Templating` can allow front end applications to interact with different blockchains via the same set of APIs. The purpose of this is to encourage third-party applications to accept different tokens interchangeably (and possibly adjusting the price up or down based on market volumes).
 
 We believe that the approach of accepting many different tokens interchangeably will become a profitable strategy for merchants in the future as low volume tokens could potentially be accepted at a steep discount and also incur lower transaction fees. It could create a highly competitive landscape for third-party entities to correctly assess the trustworthiness and reliability of low-volume tokens.
 
@@ -120,8 +120,10 @@ Multisig wallets in Capitalisk can add or remove members over time provided that
 
 ### 2.13 Network topology
 
-Capitalisk is based on `lisk-p2p` and so its network partially overlaps with that of Lisk, Leasehold and potentially other Lisk-based blockchain built with `lisk-p2p`.
-This is made possible by the fact that nodes built on top of `LDEM` can run multiple blockchains at the same time. See section 2.3 for more info about custom modules and LDEM.
+Capitalisk is based on `lisk-p2p` and so its network partially overlaps with that of Lisk, Leasehold and potentially other Lisk-based blockchains which use `lisk-p2p`.
+This is made possible by the fact that nodes built on top of `LDEM` can run multiple blockchains at the same time.
+
+![Multi-chain architecture](/img/multi-chain-architecture-medium.png)
 
 Nodes in the Lisk network form a sparse but fully-connected graph within which each node has a limited partial view of the network. This ensures that the network can scale indefinitely relative to the total number of nodes. The network topology is unstructured (non-deterministic) and involves frequent peer shuffling - This makes it essentially impossible to analyze the network topology, particularly as the network gets bigger over time.
 
