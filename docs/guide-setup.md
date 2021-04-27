@@ -5,7 +5,7 @@ sidebar_label: Capitalisk
 slug: /
 ---
 
-## Install Node.js
+## 1. Install Node.js
 
 - Follow https://github.com/nvm-sh/nvm to install nvm:
 ```shell script
@@ -20,7 +20,7 @@ nvm install 12.18.2
 ```
 - To install nvm on windows, follow https://github.com/coreybutler/nvm-windows
 
-## Install Postgres
+## 2. Install Postgres
 
 - Follow https://www.postgresql.org/download/ to install Postgres on linux/windows/mac.
 
@@ -39,7 +39,7 @@ sudo apt-get update
 sudo apt-get -y install postgresql
 ```
 
-## Setup the Postgres database for the node
+## 3. Setup the Postgres database for the node
 
 - Log into postgres:
 ```shell script
@@ -62,12 +62,15 @@ create database capitalisk_main;
 sudo service postgresql restart
 ```
 
-## Clone and setup the capitalisk-core node
+## 4. Install Git
 
-- Install git (see full instructions here: https://github.com/git-guides/install-git)
+- Full instructions can be found here: https://github.com/git-guides/install-git
 ```shell script
 sudo apt-get install git-all
 ```
+
+## 5. Clone and setup the capitalisk-core node
+
 - Clone the Git repo to your host:
 ```shell script
 git clone https://github.com/Capitalisk/capitalisk-core
@@ -80,8 +83,9 @@ cd capitalisk-core
 ```shell script
 npm install
 ```
+- Note that if you provided a custom password in step 3 instead of the default one (`'password'`), you will need to update the database details inside your main `capitalisk-core/config.json` file to match (so that the node is able to connect to your database).
 
-## Start the node
+## 6. Start the node
 
 - You can start the node in multiple ways but the simplest way is to use `pm2`.
 - You can install `pm2` with:
