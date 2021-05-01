@@ -160,6 +160,7 @@ After=network.target
 [Service]
 Type=simple
 User=<user>
+# If using snap it should be /snap/bin/node ...
 ExecStart=/bin/node /home/<user>/capitalisk-core/index.js
 Restart=on-failure
 StandardOutput=syslog
