@@ -103,8 +103,9 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description='Description will go into a meta tag in <head />'
+      description={`${siteConfig.customFields.metaDescription}`}
+      image={'img/capitalisk-logo-icon.png'}
+      keywords={["crypto", "blockchain", "decentralized", "free-market", "capitalism", "DPOS"]}
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
