@@ -40,7 +40,7 @@ sudo snap install node --channel=14/stable --classic
 sudo apt install postgresql
 ```
 
-### 2.1 Installing via PostgreSQL repositories
+### 2.2 Installing via PostgreSQL repositories
 
 - Follow https://www.postgresql.org/download/ to install Postgres on linux/windows/mac.
 
