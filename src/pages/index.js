@@ -104,6 +104,8 @@ function Home() {
   return (
     <Layout
       description={`${siteConfig.customFields.metaDescription}`}
+      image={'img/capitalisk-logo-icon.png'}
+      keywords={["crypto", "blockchain", "decentralized", "free-market", "capitalism", "DPOS"]}
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
