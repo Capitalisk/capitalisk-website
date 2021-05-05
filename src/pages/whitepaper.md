@@ -80,7 +80,7 @@ A new block may be created once every 30 seconds. If a block does not affect the
 
 ### 2.6 Instant finality
 
-Capitalisk provides instant block finality with no possibility of rollbacks. This is achieved by requiring that each block be signed by the majority of the top 21 forging delegates before they are processed. Block signing involves a single-phase voting algorithm which provides a time window for delegates to propagate their block signatures throughout the network. The voting time window does not slow down nodes in any way since they can still receive, validate and propagate transactions to be included within the next block in parallel.
+Capitalisk provides instant block finality with no possibility of rollbacks. This is achieved by requiring that each block be signed by the majority of the top 15 forging delegates before they are processed. Block signing involves a single-phase voting algorithm which provides a time window for delegates to propagate their block signatures throughout the network. The voting time window does not slow down nodes in any way since they can still receive, validate and propagate transactions to be included within the next block in parallel.
 
 ### 2.7 Dynamic fees
 
@@ -145,15 +145,11 @@ All previously signed but not yet submitted transactions from an account can eas
 ### 2.17 Registering as a delegate
 
 In order to forge blocks, an account must first register themselves as a delegate using a `registerForgingDetails` transaction.
-They must then compete with other delegates to secure as many votes as possible from CLSK token holders.
+They must then run a `capitalisk-core` node with their forging credentials and compete with other delegates to receive as many votes as possible from CLSK token holders.
 
-The top 21 forgers with the highest vote weight (based on the total amount of tokens held by voters) will be able to forge blocks and earn transaction fees.
+The top 15 forgers with the highest vote weight (based on the total amount of tokens held by voters) will be able to forge blocks and earn transaction fees.
 
-### 2.18 Lite nodes
-
-In order to save disk space, a Capitalisk node may be run as a 'lite node'; in this configuration, the node will only store a subset of block signatures (the exact number can be configured). Once it is up to date at the latest block height, a lite node behaves the same as a regular node but it will not seed its data to full nodes for syncing purposes.
-
-### 2.19 Client usage considerations
+### 2.18 Client usage considerations
 
 The stateful nature of Capitalisk's signature scheme means that a signing OTS key should not be re-used. To avoid this, a client needs to submit a 'next key index' along with each transaction - This allows the client to keep an on-chain record of which OTS key they should use next. For maximum security, clients must keep track of their own 'next key indexes' on their local host as well. The official JavaScript client provides a way to start signing from any key index. Skipping forward key indexes is allowed but going back is not recommended (except after explicitly registering a new key/new passphrase). Clients auto-increment all key indexes whenever a new transaction is signed. For maximum security, it is strongly recommended to only make transactions from a single client machine at a time (per wallet address) in order to avoid key re-use. Note, however, that forging and signing multisig transactions can be done in parallel.
 
