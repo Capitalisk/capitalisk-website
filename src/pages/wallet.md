@@ -9,13 +9,14 @@ title: Wallet
 
 LDPoS Wallet is a desktop and web browser application for browsing and interacting with the Capitalisk blockchain - It also supports other blockchains built with Capitalisk's LDPoS technology.
 
-### Installation steps
+### Hosted web wallet
 
-The LDPoS wallet is currently under development.
+Official web interface: https://capitalisk.com/wallet/ldpos/
+The hosted web wallet also acts as a block explorer.
 
-### GitHub
+### Desktop wallet
 
-https://github.com/Capitalisk/ldpos-wallet
+Download and run from source on your PC: https://github.com/Capitalisk/ldpos-wallet
 
 ## CLI client (LDPoS Commander)
 
