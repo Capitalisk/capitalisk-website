@@ -62,7 +62,7 @@ For example, a group of node operators could launch a new blockchain in a few mi
 
 ![Custom module templating diagram](/img/custom-module-templating-medium.png)
 
-This approach of creating new blockchains can also be used for creating new DEX markets (I.e. to immediately support trading for those newly created blockchains).
+This approach of creating new blockchains can also be used for creating new DEX markets (I.e. to support trading for those newly created blockchains).
 
 LDEM ensures that nodes which have matching modules will automatically find each other over the Lisk network and form a subnet with each other.
 
