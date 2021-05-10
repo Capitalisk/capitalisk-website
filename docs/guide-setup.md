@@ -5,9 +5,15 @@ sidebar_label: Capitalisk
 slug: /
 ---
 
-## 1. Install Node.js
+## 1. Install essentials
 
-### 1.1 Installing using `nvm`
+```sh
+sudo apt-get install build-essential python
+```
+
+## 2. Install Node.js
+
+### 2.1 Installing using `nvm`
 
 - Follow https://github.com/nvm-sh/nvm to install nvm:
 
@@ -26,21 +32,21 @@ nvm install 12.18.2
 
 - To install nvm on windows, follow https://github.com/coreybutler/nvm-windows
 
-### 1.2 Installing via snap
+### 2.2 Installing via snap
 
 ```sh
 sudo snap install node --channel=14/stable --classic
 ```
 
-## 2. Install Postgres
+## 3. Install Postgres
 
-### 2.1 Installing via Ubuntu repositories
+### 3.1 Installing via Ubuntu repositories
 
 ```sh
 sudo apt install postgresql
 ```
 
-### 2.2 Installing via PostgreSQL repositories
+### 3.2 Installing via PostgreSQL repositories
 
 - Follow https://www.postgresql.org/download/ to install Postgres on linux/windows/mac.
 
@@ -62,7 +68,7 @@ sudo apt-get update
 sudo apt-get -y install postgresql
 ```
 
-## 3. Setup the Postgres database for the node
+## 4. Setup the Postgres database for the node
 
 - Log into postgres:
 
@@ -94,7 +100,7 @@ create database capitalisk_main;
 sudo service postgresql restart
 ```
 
-## 4. Install Git
+## 5. Install Git
 
 - Full instructions can be found here: https://github.com/git-guides/install-git
 
@@ -102,7 +108,7 @@ sudo service postgresql restart
 sudo apt-get install git-all
 ```
 
-## 5. Clone and setup the capitalisk-core node
+## 6. Clone and setup the capitalisk-core node
 
 - Clone the Git repo to your host:
 
@@ -124,9 +130,9 @@ npm install
 
 - Note that if you provided a custom password in step 3 instead of the default one (`'password'`), you will need to update the database details inside your main `capitalisk-core/config.json` file to match (so that the node is able to connect to your database).
 
-## 6. Start the node
+## 7. Start the node
 
-### 6.1 PM2
+### 7.1 PM2
 
 - You can start the node in multiple ways but the simplest way is to use `pm2`.
 - You can install `pm2` with:
@@ -141,7 +147,7 @@ npm install -g pm2
 pm2 start index.js --name "capitalisk-core" -o "/dev/null" -e "/dev/null"
 ```
 
-### 6.2 Systemd
+### 7.2 Systemd
 
 - You can add an entry to `systemd`, that way the system easily restarts the process both on failure and reboot.
 
