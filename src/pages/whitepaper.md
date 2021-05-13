@@ -31,7 +31,7 @@ Capitalisk (CLSK) aims to be connected to Leasehold (LSH) via a DEX market and t
 The team behind Capitalisk does not intend to sell any CLSK tokens; instead, all tokens will be airdropped to Leasehold investors and Lisk voters according to the following allocations:
 
 - 50% to Leasehold token holders.
-- 38% to Lisk token holders who vote for all 10 members of `Lisk Initiative` on the new Lisk v3 blockchain.
+- 38% to Lisk token holders who vote for `Lisk Initiative` (specifics will be revealed after Lisk v3 launch).
 - 10% to Leasehold directors, LDEX members and Capitalisk contributors.
 - 2% reserved for community fund for future development, partnerships, marketing, etc...
 
