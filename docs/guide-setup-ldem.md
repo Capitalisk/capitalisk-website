@@ -5,6 +5,11 @@ sidebar_label: Setup on an existing node
 slug: /setup-ldem
 ---
 
+## Overview
+
+Capitalisk can be setup as a module on any [LDEM](https://github.com/Capitalisk/ldem) node such as a [Leasehold](https://leasehold.io/) node.
+It allows a single node to participate in multiple blockchains at the same time; this feature allows DEX markets to be created between those blockchains.
+
 ## 1. Install necessary modules
 
 Navigate to your existing `LDEM` node's main working directory.
