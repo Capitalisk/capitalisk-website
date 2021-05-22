@@ -1,7 +1,7 @@
 ---
 id: guide-setup
-title: Setting up a Capitalisk node
-sidebar_label: Capitalisk
+title: Setting up a new Capitalisk node
+sidebar_label: Setup a new node
 slug: /
 ---
 
@@ -143,7 +143,7 @@ npm install -g pm2
 
 - Then launch the node with:
 
-```
+```shell script
 pm2 start index.js --name "capitalisk-core" -o "/dev/null" -e "/dev/null"
 ```
 
@@ -201,7 +201,7 @@ And now you are all set!
 
 - To restart the node, the command is:
 
-```
+```shell script
 pm2 restart capitalisk-core
 ```
 
@@ -211,7 +211,7 @@ pm2 restart capitalisk-core
 
 - If you want to shut down the code, you can use the command:
 
-```
+```shell script
 pm2 delete capitalisk-core
 ```
 

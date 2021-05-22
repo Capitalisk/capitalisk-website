@@ -1,5 +1,5 @@
 module.exports = {
   someSidebar: {
-    Guides: ['guide-setup'],
+    Guides: ['guide-setup', 'guide-setup-ldem'],
   },
 };
