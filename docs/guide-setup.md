@@ -38,15 +38,50 @@ nvm install 12.18.2
 sudo snap install node --channel=14/stable --classic
 ```
 
-## 3. Install Postgres
+## 5.1 Install Git
 
-### 3.1 Installing via Ubuntu repositories
+- Full instructions can be found here: https://github.com/git-guides/install-git
+
+```shell script
+sudo apt-get install git-all
+```
+
+## 4. Clone and setup the capitalisk-core node
+
+- Clone the Git repo to your host:
+
+```shell script
+git clone https://github.com/Capitalisk/capitalisk-core
+```
+
+- Change directory to the project root:
+
+```shell script
+cd capitalisk-core
+```
+
+- Install Node.js dependencies:
+
+```shell script
+npm install
+```
+
+- Note that if you provided a custom password in step 3 instead of the default one (`'password'`), you will need to update the database details inside your main `capitalisk-core/config.json` file to match (so that the node is able to connect to your database).
+
+## 5. Capitalisk node supports multiple databases
+- As of now, following databases are supported
+1. Postgres - Need to install and configure separate postgres service.
+2. SQlite - Ready to use out of the box.
+
+## 5.1 Install Postgres
+
+### 5.1.1 Installing via Ubuntu repositories
 
 ```sh
 sudo apt install postgresql
 ```
 
-### 3.2 Installing via PostgreSQL repositories
+### 5.1.2 Installing via PostgreSQL repositories
 
 - Follow https://www.postgresql.org/download/ to install Postgres on linux/windows/mac.
 
@@ -68,7 +103,7 @@ sudo apt-get update
 sudo apt-get -y install postgresql
 ```
 
-## 4. Setup the Postgres database for the node
+## 5.1.3 Setup the Postgres database for the node
 
 - Log into postgres:
 
@@ -100,39 +135,14 @@ create database capitalisk_main;
 sudo service postgresql restart
 ```
 
-## 5. Install Git
+## 5.2 Installing SQlite
+- SQlite binaries are automatically installed as a part of `npm install` or `yarn install`.
+- Just make sure, no warning or error is thrown for while installing npm packages for `sqlite3`. 
 
-- Full instructions can be found here: https://github.com/git-guides/install-git
 
-```shell script
-sudo apt-get install git-all
-```
+## 6. Start the node
 
-## 6. Clone and setup the capitalisk-core node
-
-- Clone the Git repo to your host:
-
-```shell script
-git clone https://github.com/Capitalisk/capitalisk-core
-```
-
-- Change directory to the project root:
-
-```shell script
-cd capitalisk-core
-```
-
-- Install Node.js dependencies:
-
-```shell script
-npm install
-```
-
-- Note that if you provided a custom password in step 3 instead of the default one (`'password'`), you will need to update the database details inside your main `capitalisk-core/config.json` file to match (so that the node is able to connect to your database).
-
-## 7. Start the node
-
-### 7.1 PM2
+### 6.1 PM2
 
 - You can start the node in multiple ways but the simplest way is to use `pm2`.
 - You can install `pm2` with:
@@ -141,13 +151,27 @@ npm install
 npm install -g pm2
 ```
 
-- Then launch the node with:
+- Launch node for sqlite 
+```shell script
+pm2 start index.js --name "capitalisk-core-sqlite" -o "/dev/null" -e "/dev/null" --node-args="config.sqlite.json" 
+```
+OR 
+
+- Launch the node for postgres:
 
 ```shell script
 pm2 start index.js --name "capitalisk-core" -o "/dev/null" -e "/dev/null"
 ```
 
-### 7.2 Systemd
+- Make sure log size doesn't exceed storage capacity of the machine.
+- PM2 doesn't have a check for maximum log file size, so it can terminate node due to log size exceeding storage capacity
+- Install [PM2 log rotation module](https://github.com/keymetrics/pm2-logrotate), to limit log size and allow log file rotations.
+```
+  pm2 install pm2-logrotate
+```
+- Default max log file size limit is 10MB after module is installed, follow official README to change the limit.
+
+### 6.2 Systemd
 
 - You can add an entry to `systemd`, that way the system easily restarts the process both on failure and reboot.
 
@@ -218,3 +242,10 @@ pm2 delete capitalisk-core
 ## Enabling logging for node
 
 - Log level can be changed under the `logger` section of `config.json` under the `capitalisk_chain` module entry - Possible values include: `error`, `debug` or `info`.
+
+## 7. Check status of the node
+- By default, CLSK node should work without any issues. 
+- If `pm2 ls` shows red status for any of the spawned process, it means we need to check logs for exact error.
+- Edit either `config.json` (in case of postgres) or `config.sqlite.json` (in case of sqlite) using nano, and replace `error` with `info` for logging, save file.
+- Run `pm2 logs`, one of the statements should contain `Received valid block ...`, it means node is syncing and working just fine.
+
