@@ -244,6 +244,18 @@ pm2 delete capitalisk-core
 - Log level can be changed under the `logger` section of `config.json` under the `capitalisk_chain` module entry - Possible values include: `error`, `debug` or `info`.
 
 ## 7. Check status of the node
+1. Using ldpos-commander (https://github.com/Capitalisk/ldpos-commander)
+- Install ldpos commander using 
+```shell script
+npm i -g ldpos-commander
+```
+- Run below command to get node block height, since node is syncing, height should keep changing. i.e. Should keep increasing
+```shell script
+ldpos IP_ADDRESS:8001 block get max-height
+```
+PS. Please change port, if changed in the config.
+
+2. Using logs
 - By default, CLSK node should work without any issues. 
 - If `pm2 ls` shows red status for any of the spawned process, it means we need to check logs for exact error.
 - Edit either `config.json` (in case of postgres) or `config.sqlite.json` (in case of sqlite) using nano, and replace `error` with `info` for logging, save file.
