@@ -153,7 +153,7 @@ npm install -g pm2
 
 - Launch node for sqlite 
 ```shell script
-pm2 start index.js --name "capitalisk-core-sqlite" -o "/dev/null" -e "/dev/null" --node-args="config.sqlite.json" 
+pm2 start index.js --name "capitalisk-core-sqlite" -o "/dev/null" -e "/dev/null" -- -c=config.sqlite.json 
 ```
 OR 
 
@@ -164,7 +164,7 @@ pm2 start index.js --name "capitalisk-core" -o "/dev/null" -e "/dev/null"
 ```
 
 - Make sure log size doesn't exceed storage capacity of the machine.
-- PM2 doesn't have a check for maximum log file size, so it can terminate node due to log size exceeding storage capacity
+- PM2 doesn't have a native check for maximum log file size, so it can terminate node due to log size exceeding storage capacity
 - Install [PM2 log rotation module](https://github.com/keymetrics/pm2-logrotate), to limit log size and allow log file rotations.
 ```
   pm2 install pm2-logrotate
