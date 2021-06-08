@@ -1,6 +1,6 @@
 ---
 id: guide-setup-ldem
-title: Setting up on an existing node
+title: Setup on an existing node
 sidebar_label: Setup on an existing node
 slug: /setup-ldem
 ---
@@ -25,22 +25,22 @@ npm install ldpos-chain --save
 npm install ldpos-knex-dal --save
 ```
 
-## 2. Add the Capitalisk genesis.json file to your node
+## 2. Add the clsk-genesis.json file to your node
 
-While still inside your node's main working directory, create a new directory to hold the `genesis.json` file for Capitalisk:
+While still inside your node's main working directory, create a new directory to hold the `clsk-genesis.json` file for Capitalisk:
 
 ```shell script
 mkdir -p genesis/mainnet
 ```
 
-Then, inside this new `genesis/mainnet/` directory, create a new file called `genesis.json` and paste the content of the following file inside of it:
+Then, inside this new `genesis/mainnet/` directory, create a new file called `clsk-genesis.json` and paste the content of the following file inside of it:
 
 https://gist.github.com/jondubois/6061f01168f793308621b77b16ee64c1
 
 ## 3. Create a new database for Capitalisk
 
 Create a new Postgres database called `capitalisk_main`.
-The following commands may be different depending on your Postgres user details:
+The following commands may be different depending on your Postgres setup:
 
 ```shell script
 postgres createdb capitalisk_main
@@ -61,7 +61,7 @@ Inside your node's main working directory, there should be a file called `config
 ```json
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
-  "genesisPath": "../../genesis/mainnet/genesis.json",
+  "genesisPath": "../../genesis/mainnet/clsk-genesis.json",
   "components": {
     "logger": {
       "logFileName": "logs/mainnet/clsk.log",
@@ -87,7 +87,7 @@ Make sure that each object in your `config.json` file is separated with a comma 
 
 You will need to modify the properties above inside the `dal.connection` object to make it point to your Postgres database; make sure that the `host`, `user`, `password` and `port` properties are correct based on your node's current setup.
 
-Make sure that the `genesisPath` property points to the path of the Capitalisk `genesis.json` file which you created in step 2 (default above should be fine in most cases).
+Make sure that the `genesisPath` property points to the path of the `clsk-genesis.json` file which you created in step 2 (default above should be fine in most cases).
 All paths in this module's config are relative to the `modulePath`; in this case; `node_modules/ldpos-chain/`.
 
 ## 5. Restart your node

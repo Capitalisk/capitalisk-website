@@ -1,6 +1,6 @@
 ---
 id: guide-setup
-title: Setting up a new Capitalisk node
+title: Setup a new Capitalisk node
 sidebar_label: Setup a new node
 slug: /
 ---
@@ -150,7 +150,7 @@ npm install -g pm2
 - Launch node for SQLite
 
 ```shell script
-pm2 start index.js --name "capitalisk-core-sqlite" -o "/dev/null" -e "/dev/null" -- -c=config.sqlite.json
+pm2 start index.js --name "capitalisk-core-sqlite" -o "/dev/null" -e "/dev/null"
 ```
 
 OR
@@ -267,8 +267,6 @@ PS. Please change port, if changed in the config.
 - If `pm2 ls` shows red status for any of the spawned process, it means we need to check logs for exact error.
 - Edit either `config.json` (in case of postgres) or `config.sqlite.json` (in case of SQLite) using nano, and replace `error` with `info` for logging, save file.
 - Run `pm2 logs`, one of the statements should contain `Received valid block ...`, it means node is syncing and working just fine.
-
-## 8. Adding a `forgingPassphrase`
 
 ### 8. Adding a forging passphrase
 
