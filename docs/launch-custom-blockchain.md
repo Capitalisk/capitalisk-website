@@ -65,12 +65,11 @@ Your `foo-genesis.json` file should follow the same structure as the `foo-genesi
 
 The simplest way to generate accounts is using `ldpos-commander` using this command:
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// TODO 222: Specify the chain symbol
-
 ```shell script
 ldpos account generate
 ```
+
+It will prompt you for the network symbol of your custom blockchain.
 
 The output should look like this:
 
