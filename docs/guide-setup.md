@@ -63,11 +63,14 @@ npm install
 - Note that if you provided a custom password in step 3 instead of the default one (`'password'`), you will need to update the database details inside your main `capitalisk-core/config.json` file to match (so that the node is able to connect to your database).
 
 ## 4. Capitalisk node supports multiple databases
+
 - As of now, following databases are supported
+
 1. SQLite - Ready to use out of the box.
 2. Postgres - Need to install and configure separate postgres service.
 
 ## 4.1 Installing SQLite
+
 - SQLite binaries are automatically installed as a part of `npm install` or `yarn install`.
 - Just make sure, no warning or error is thrown while installing npm packages for `sqlite3`.
 
@@ -131,8 +134,7 @@ create database capitalisk_main;
 
 ```
 sudo service postgresql restart
-``` 
-
+```
 
 ## 5. Start the node
 
@@ -145,11 +147,13 @@ sudo service postgresql restart
 npm install -g pm2
 ```
 
-- Launch node for SQLite 
+- Launch node for SQLite
+
 ```shell script
-pm2 start index.js --name "capitalisk-core-sqlite" -o "/dev/null" -e "/dev/null" -- -c=config.sqlite.json 
+pm2 start index.js --name "capitalisk-core-sqlite" -o "/dev/null" -e "/dev/null" -- -c=config.sqlite.json
 ```
-OR 
+
+OR
 
 - Launch the node for postgres:
 
@@ -160,9 +164,11 @@ pm2 start index.js --name "capitalisk-core" -o "/dev/null" -e "/dev/null"
 - Make sure log size doesn't exceed storage capacity of the machine.
 - PM2 doesn't have a native check for maximum log file size, so it can terminate node due to log size exceeding storage capacity
 - Install [PM2 log rotation module](https://github.com/keymetrics/pm2-logrotate), to limit log size and allow log file rotations.
+
 ```
   pm2 install pm2-logrotate
 ```
+
 - Default max log file size limit is 10MB after module is installed, follow official README to change the limit.
 
 ### 5.2 Systemd
@@ -238,20 +244,46 @@ pm2 delete capitalisk-core
 - Log level can be changed under the `logger` section of `config.json` under the `capitalisk_chain` module entry - Possible values include: `error`, `debug` or `info`.
 
 ## 7. Check status of the node
+
 ### 7.1 Using ldpos-commander (https://github.com/Capitalisk/ldpos-commander)
-- Install ldpos commander using 
+
+- Install ldpos commander using
+
 ```shell script
 npm i -g ldpos-commander
 ```
+
 - Run below command to get node block height, since node is syncing, height should keep changing. i.e. Should keep increasing
+
 ```shell script
 ldpos IP_ADDRESS:8001 block get max-height
 ```
+
 PS. Please change port, if changed in the config.
 
 ### 7.2 Using logs
-- By default, CLSK node should work without any issues. 
+
+- By default, CLSK node should work without any issues.
 - If `pm2 ls` shows red status for any of the spawned process, it means we need to check logs for exact error.
 - Edit either `config.json` (in case of postgres) or `config.sqlite.json` (in case of SQLite) using nano, and replace `error` with `info` for logging, save file.
 - Run `pm2 logs`, one of the statements should contain `Received valid block ...`, it means node is syncing and working just fine.
 
+## 8. Adding a `forgingPassphrase`
+
+### 8. Adding a forging passphrase
+
+In the `config.json`:
+
+```json
+...
+"capitalisk_chain": {
+  "modulePath": "node_modules/ldpos-chain",
+  "genesisPath": "../../genesis/mainnet/genesis.json",
+  "forgingCredentials": [
+    {
+      "forgingPassphrase": "passphrase goes here"
+    }
+  ]
+}
+...
+```
