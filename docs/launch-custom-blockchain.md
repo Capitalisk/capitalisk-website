@@ -167,7 +167,7 @@ sudo -u postgres createdb foo_main
 }
 ```
 
-Substitute `foo` in `genesisPath` and `components.logger.logFileName` to with the symbol of your custom chain.
+Substitute `foo` in `genesisPath` and in `components.logger.logFileName` with the symbol of your custom chain.
 
 If you're using `sqlite`, the object under `dal` should look like this instead:
 
