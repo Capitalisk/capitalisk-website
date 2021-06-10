@@ -8,6 +8,7 @@ slug: /launch-custom-blockchain
 ## Overview
 
 This guide will show you how to setup the first node of your new custom blockchain and then show you how to get additional nodes to join it.
+If you run into any issues, feel free to reach out to people from the Capitalisk or Leasehold communities for assistance.
 
 A Capitalisk node runs on an decentralized engine called [LDEM](https://github.com/Capitalisk/ldem) - It allows a single node to efficiently participate in multiple blockchains.
 With LDEM, it's possible to launch a new/custom blockchain using an existing [Lisk custom module](https://github.com/LiskHQ/lips/blob/master/proposals/lip-0005.md) as the source (no coding necessary).
@@ -23,13 +24,18 @@ This guide assumes that the new custom blockchain symbol will be `foo` - You sho
 
 ## 1. Requirements
 
-### 1.1 A compatible LDEM node
+### 1.1 Hardware requirements
 
-To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Setting up a new Capitalisk node](http://localhost:3000/docs/) to setup a node.
+- A machine/instance with a publicly exposed IP address (E.g. from a cloud service provider).
+- 100GB of hard drive space is recommended (this should be enough for several years of data).
+- Port 8001 needs to be open for inbound TCP traffic.
+- All ports should be open for outbound TCP traffic.
 
-Once you have a working Capitalisk node, launching a new custom blockchain should only take between a few minutes to an hour and doesn't require any additional installation steps.
+### 1.2 A compatible LDEM node
 
-### 1.2 LDPoS Commander CLI
+To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Setting up a new Capitalisk node](./) to setup a node.
+
+### 1.3 LDPoS Commander CLI
 
 You need to install the `ldpos-commander` Node.js module using the following command:
 
@@ -55,7 +61,7 @@ If the command outputs a version number, it means that the installation was succ
 
 Each blockchain needs to start from a genesis state. Blockchains based on `ldpos-chain` load their initial state from a genesis JSON file - It contains a list of accounts and balances which are present from the beginning of the blockchain as well as initial votes which determine who the initial forging delegates are.
 
-For your custom blockchain, you will need to create your own `foo-genesis.json` file - You can add as many genesis accounts to it as you want with whatever balance amounts and votes you want.
+For your custom blockchain, you will need to create your own `foo-genesis.json` file - You can add as many genesis accounts to it as you want with whatever balance amounts and votes you want. You can create this file on your own computer (while preparing it); later, you will need to drop a copy of it inside a specific directory on your node.
 
 Your `foo-genesis.json` file should follow the same structure as the `foo-genesis.json` file of the Capitalisk blockchain: https://gist.github.com/jondubois/6061f01168f793308621b77b16ee64c1
 
@@ -121,10 +127,20 @@ For example:
 
 It's recommended that the genesis voter account vote for all the delegate accounts which you created in order to take up the majority of available forging slots (make sure you control `~66%` of available forging slots). The voting could alternatively be done later (post-launch), but this is not recommended for most scenarios.
 
+Once your `foo-genesis.json` file is ready, you should drop it inside a directory on your remote Capitalisk node.
+It's recommended that you drop it at the following relative path:
+
+```
+capitalisk-core/genesis/mainnet/foo-genesis.json
+```
+
+Note that `capitalisk-core` is the directory where your node's source code is located.
+
 ## 3. Create a new database
 
+If using SQLite, the database file will be created automatically so you can skip this step. Each node is free to choose their own database engine.
+
 If using Postgres, you will need to create a new database to store the blockchain data.
-If using SQLite, the database file will be created automatically so you can skip this step.
 
 Create a new Postgres database. If your blockchain is called `foo` you may want to call it `foo_main` (for mainnet).
 The following commands may be different depending on your Postgres setup (change `foo_main` with an appropriate database name):
@@ -141,6 +157,11 @@ sudo -u postgres createdb foo_main
 
 ## 4. Add a new custom module config object
 
+You will need to open your node's `config.json` file (inside your main `capitalisk-core` directory).
+Inside this file, you should find a field called `modules` which is an array of module objects; these objects reference the module instances which will run on your node.
+
+You will need to add the following object inside the array alongside existing entries:
+
 ```json
 "foo_chain": {
   "modulePath": "node_modules/ldpos-chain",
@@ -148,7 +169,7 @@ sudo -u postgres createdb foo_main
   "components": {
     "logger": {
       "logFileName": "logs/mainnet/foo.log",
-      "consoleLogLevel": "info",
+      "consoleLogLevel": "debug",
       "fileLogLevel": "error"
     },
     "dal": {
@@ -166,9 +187,13 @@ sudo -u postgres createdb foo_main
 }
 ```
 
-Substitute `foo` in `genesisPath` and in `components.logger.logFileName` with the symbol of your custom chain.
+Make sure that each module object inside the `modules` array is separated by a comma (the `config.json` file needs to be valid JSON).
 
-If you're using `sqlite`, the object under `dal` should look like this instead:
+From the above object, you will need to substitute the `foo` in `genesisPath` and in `components.logger.logFileName` with the symbol of your custom chain.
+
+Note that the `genesisPath` is relative to the module's code - This is why the path start with `../../`. Alternatively, you can use an absolute path starting with `/`; so long as it points to your `foo-genesis.json` file on the node.
+
+If you're using SQLite instead of Postgres, the object under `dal` should look like this instead:
 
 ```json
 "dal": {
@@ -184,4 +209,29 @@ Substitute `foo` with your custom chain symbol in `filename`.
 
 ## 5. Start your node
 
+You can start the node using PM2:
+
+```shell script
+pm2 start index.js --name "ldem-node" -o "/dev/null" -e "/dev/null"
+```
+
+You should check the logs using the following command:
+
+```shell script
+pm2 logs ldem-node
+```
+
+If you see a lot of error messages, it could be an indication that something went wrong.
+Pay attention to the metadata inside the square brackets; it should tell you if the message is of type `INFO`, `DEBUG`, `WARN` or `ERROR`; you can ignore most message types except for `ERROR`. The logs should also tell you which module the message comes from - You should mostly concern yourself with messages from the `foo_chain` module.
+
 ## 6. Get other nodes to join your new blockchain
+
+You will need to provide participants with the following things:
+
+- A copy of your prepared `foo-genesis.json` file from step `#2`.
+- An exact copy of your genesis object from step `#4`.
+- A link to this guide: [Join a custom blockchain](join-custom-blockchain).
+
+You may want to provide additional assistance to new participants depending on their technical abilities; it can be helpful to compare logs with other participants to ensure that their nodes are running correctly.
+
+If you run into any issues that you can't figure out, you can reach out to node operators from the Leasehold or Capitalisk community since we all use the same underlying technology.

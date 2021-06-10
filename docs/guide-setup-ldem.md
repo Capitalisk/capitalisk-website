@@ -10,7 +10,14 @@ slug: /setup-ldem
 Capitalisk can be setup as a module on any [LDEM](https://github.com/Capitalisk/ldem) node such as a [Leasehold](https://leasehold.io/) node.
 It allows a single node to participate in multiple blockchains at the same time; this feature allows DEX markets to be created between those blockchains.
 
-## 1. Install necessary modules
+## 1. Hardware Requirements
+
+- A machine/instance with a publicly exposed IP address (E.g. from a cloud service provider).
+- 100GB of hard drive space is recommended (this should be enough for several years of data).
+- Port 8001 needs to be open for inbound TCP traffic.
+- All ports should be open for outbound TCP traffic.
+
+## 2. Install necessary modules
 
 Navigate to your existing `LDEM` node's main working directory.
 For a Leasehold `LDEM` node, the directory is usually called `leasehold-core-mainnet/` or `leasehold-core/`.
@@ -25,7 +32,7 @@ npm install ldpos-chain --save
 npm install ldpos-knex-dal --save
 ```
 
-## 2. Add the clsk-genesis.json file to your node
+## 3. Add the clsk-genesis.json file to your node
 
 While still inside your node's main working directory, create a new directory to hold the `clsk-genesis.json` file for Capitalisk:
 
@@ -37,7 +44,7 @@ Then, inside this new `genesis/mainnet/` directory, create a new file called `cl
 
 https://gist.github.com/jondubois/6061f01168f793308621b77b16ee64c1
 
-## 3. Create a new database for Capitalisk
+## 4. Create a new database for Capitalisk
 
 Create a new Postgres database called `capitalisk_main`.
 The following commands may be different depending on your Postgres setup:
@@ -54,7 +61,7 @@ sudo -u postgres createdb capitalisk_main
 
 Capitalisk also supports the SQLite database but that's a topic for a different guide.
 
-## 4. Add the Capitalisk module config
+## 5. Add the Capitalisk module config
 
 Inside your node's main working directory, there should be a file called `config.json`; inside it, there should be a `modules` array which holds configurations for each of the modules which are running on your node. You should add the following config object to this `modules` array:
 
@@ -65,7 +72,7 @@ Inside your node's main working directory, there should be a file called `config
   "components": {
     "logger": {
       "logFileName": "logs/mainnet/clsk.log",
-      "consoleLogLevel": "info",
+      "consoleLogLevel": "debug",
       "fileLogLevel": "error"
     },
     "dal": {
@@ -90,7 +97,7 @@ You will need to modify the properties above inside the `dal.connection` object 
 Make sure that the `genesisPath` property points to the path of the `clsk-genesis.json` file which you created in step 2 (default above should be fine in most cases).
 All paths in this module's config are relative to the `modulePath`; in this case; `node_modules/ldpos-chain/`.
 
-## 5. Restart your node
+## 6. Restart your node
 
 If using `pm2`, make sure that you `pm2 delete` any previous instances of your node to make sure that you'll be launching the node with the latest source code (with the new modules).
 You should watch the logs using the `pm2 logs` command to see your node's `capitalisk_chain` module catching up with the rest of the Capitalisk network.
