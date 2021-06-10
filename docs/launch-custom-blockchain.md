@@ -229,7 +229,7 @@ Pay attention to the metadata inside the square brackets; it should tell you if 
 You will need to provide participants with the following things:
 
 - A copy of your prepared `foo-genesis.json` file from step `#2`.
-- An exact copy of your config object from step `#4`.
+- An exact copy of your module config object from step `#4`.
 - A link to this guide: [Join a custom blockchain](join-custom-blockchain).
 
 You may want to provide additional assistance to new participants depending on their technical abilities; it can be helpful to compare logs with other participants to ensure that their nodes are running correctly.
