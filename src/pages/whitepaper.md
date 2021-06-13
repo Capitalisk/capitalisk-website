@@ -42,7 +42,7 @@ Airdrop participants will need to prove their eligibility in order to claim CLSK
 
 ### 2.1 Overview
 
-Capitalisk is the first token built on top of LDPoS; a set of modules which implement a stateful, quantum-resistant DPoS (Delegated Proof of Stake) consensus algorithm.
+Capitalisk is the first cryptocurrency built on top of LDPoS; a set of modules which implement a stateful, quantum-resistant DPoS (Delegated Proof of Stake) consensus algorithm.
 Quantum resistance is achieved through the use of Lamport One-Time Signatures combined with Merkle Signature Trees to allow a single public key root hash to be reused multiple times.
 The algorithm is stateful; a wallet's public key is changed every 64 transactions; this statefulness provides some novel features including the ability for a user to change their wallet's passphrase.
 
