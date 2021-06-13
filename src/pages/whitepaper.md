@@ -125,7 +125,7 @@ This is made possible by the fact that nodes built on top of `LDEM` can run mult
 
 ![Multi-chain architecture](/img/multi-chain-architecture-medium.png)
 
-Nodes in the Lisk network form a sparse but fully-connected graph within which each node has a limited partial view of the network. This ensures that the network can scale indefinitely relative to the total number of nodes. The network topology is unstructured (non-deterministic) and involves frequent peer shuffling - This makes it essentially impossible to analyze the network topology, particularly as the network gets bigger over time.
+Nodes in the Lisk network form a sparse graph within which each node has a limited partial view of the network. This ensures that the network can scale indefinitely relative to the total number of nodes. The network topology is unstructured (non-deterministic) and involves frequent peer shuffling - This makes it essentially impossible to analyze the network topology, particularly as the network gets bigger over time.
 
 ### 2.14 P2P module-to-module routing
 
