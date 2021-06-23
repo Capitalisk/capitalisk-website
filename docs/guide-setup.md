@@ -228,6 +228,12 @@ And now you are all set!
 pm2 restart capitalisk-core
 ```
 
+or
+
+```sh
+sudo systemctl restart capitalisk-core
+```
+
 - Note that if you make any changes to the `config.json` file, you will need to restart the node for the changes to take effect.
 
 ## 7.2 Stopping the node
@@ -238,9 +244,17 @@ pm2 restart capitalisk-core
 pm2 delete capitalisk-core
 ```
 
+or
+
+```sh
+sudo systemctl stop capitalisk-core
+```
+
 ## 7.3 Enabling logging for node
 
 - Log level can be changed under the `logger` section of `config.json` under the `capitalisk_chain` module entry - Possible values include: `error`, `debug` or `info`.
+- To easily track the logs you can use `tail -f <path>/<to>/<logs>`
+- Get specific information about a delegate `cat /logs/mainnet/clsk.log | grep "<address>"`
 
 ## 8. Check status of the node
 
