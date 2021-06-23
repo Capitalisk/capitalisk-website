@@ -191,9 +191,9 @@ Make sure that each module object inside the `modules` array is separated by a c
 
 In the above object, you will need to substitute `foo` with the symbol of your custom chain throughout:
 
-- The field/module name (`foo_chain`)
-- `genesisPath` (`../../genesis/mainnet/foo-genesis.json`)
-- `components.logger.logFileName` (`logs/mainnet/foo.log`)
+- The module name (`foo_chain`)
+- The value of `genesisPath` (`../../genesis/mainnet/foo-genesis.json`)
+- The value of `components.logger.logFileName` (`logs/mainnet/foo.log`)
 
 Note that the `genesisPath` is relative to the module's code - This is why the path start with `../../`. Alternatively, you can use an absolute path starting with `/`; so long as it points to your `foo-genesis.json` file on the node.
 

@@ -104,9 +104,9 @@ You will need to add the following object inside the array:
 
 In the above object, you will need to substitute `foo` with the symbol of your custom chain throughout:
 
-- The field/module name (`foo_chain`)
-- `genesisPath` (`../../genesis/mainnet/foo-genesis.json`)
-- `components.logger.logFileName` (`logs/mainnet/foo.log`)
+- The module name (`foo_chain`)
+- The value of `genesisPath` (`../../genesis/mainnet/foo-genesis.json`)
+- The value of `components.logger.logFileName` (`logs/mainnet/foo.log`)
 
 If you want to use SQLite instead of Postgres, the object under `dal` should look like this instead:
 
