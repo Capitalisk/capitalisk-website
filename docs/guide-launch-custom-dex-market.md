@@ -8,6 +8,7 @@ slug: /launch-custom-dex-market
 ## Overview
 
 This guide will show you how to setup a custom DEX market on an existing node to facilitate decentralized trading between two different tokens.
+A DEX market is a kind of Decentralized Autonomous Organization (DAO) - It runs by itself without requiring any manual intervention and it automatically distributes profits to its members on a schedule.
 
 This guide assumes that your node participates in the 2 blockchains across which you want to faciliate trading.
 One of these chains (`clsk`) will be referred to as the 'base chain' and the other (`foo`) will be referred to as the 'quote chain'.
@@ -34,7 +35,17 @@ Since a Capitalisk node already supports the `clsk` blockchain by default, you o
 
 Once your node is in sync with both blockchains, you can start setting up your DEX market.
 
-### 1.3 LDPoS Commander CLI
+### 1.3 The lisk-dex module
+
+Once you have an LDEM node setup, navigate to the node's main directory (e.g. the `capitalisk-core` directory), then execute the following command:
+
+```shell script
+npm install lisk-dex
+```
+
+This will install the `lisk-dex` module which will allow your node to operate as a DEX node.
+
+### 1.4 LDPoS Commander CLI
 
 You need to install the `ldpos-commander` Node.js module using the following command:
 
@@ -61,7 +72,14 @@ LDPoS Commander is recommended for creating the necessary multisig accounts.
 
 ## 2. Register multisig wallets
 
+A DEX market needs to have a mutisignature (multisig) account on each of the 2 chains which it integrates with.
+A multisig account is a blockchain account which requires signatures from multiple individuals in order to make any transactions - It's like a bank account for your DAO.
+Multisig accounts can be setup with different rules which determine who the members are (based on their personal account addresses) and how many of them need to sign a transaction for it to be considered valid.
 
+Follow the [Create a multisig account](create-multisig-account) guide to create a multisig account on each affected chain.
+You will need to create one on the `clsk` blockchain and one on the `foo` blockchain (the one you want to use as the quote chain).
+It's strongly recommended that both multisig accounts have the same set of people as members.
+It's also strongly recommended that each multisig account be setup to require signatures from more than 50% of its members.
 
 ## 3. Add a new custom module config object
 
@@ -191,16 +209,16 @@ pm2 logs ldem-node
 ```
 
 If you see a lot of error messages, it could be an indication that something went wrong.
-Pay attention to the metadata inside the square brackets; it should tell you if the message is of type `INFO`, `DEBUG`, `WARN` or `ERROR`; you can ignore most message types except for `ERROR`. The logs should also tell you which module the message comes from - You should mostly concern yourself with messages from the `foo_chain` module.
+The logs should also tell you which module the message comes from - You should mostly concern yourself with messages from the `lisk_dex_foo_clsk` module.
+You can change the `fileLogLevel` and `consoleLogLevel` in the `lisk_dex_foo_clsk` module config to `debug` or `error` depending on your requirements. Detailed logs consume more disk space.
 
-## 5. Get other nodes to join your new blockchain
+## 5. Get other nodes to join your new DEX federation
 
 You will need to provide participants with the following things:
 
-- A copy of your prepared `foo-genesis.json` file from step `#2`.
-- An exact copy of your module config object from step `#4`.
-- A link to this guide: [Join a custom blockchain](join-custom-blockchain).
+- An exact copy of your module config object from step `#3`.
+- A link to this guide: [Join a custom DEX market](join-custom-dex-market).
 
 You may want to provide additional assistance to new participants depending on their technical abilities; it can be helpful to compare logs with other participants to ensure that their nodes are running correctly.
 
-If you run into any issues that you can't figure out, you can reach out to node operators from the Leasehold or Capitalisk community since we all use the same underlying technology.
+If you run into any issues that you can't figure out, you can reach out to DEX node operators from the Leasehold or Capitalisk community.

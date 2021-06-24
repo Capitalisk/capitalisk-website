@@ -75,7 +75,8 @@ sudo -u postgres createdb foo_main
 You will need to open your node's `config.json` file (inside your main `capitalisk-core` directory).
 Inside this file, you should find a field called `modules` which is an array of module objects; these objects reference the module instances which will run on your node.
 
-You will need to add the following object inside the array:
+You will need to add the blockchain module config object which was provided to you by existing blockchain participants to your `config.json` file.
+The object might look like this (though it will likely have some different values and properties):
 
 ```json
 "foo_chain": {
@@ -102,12 +103,9 @@ You will need to add the following object inside the array:
 }
 ```
 
-In the above object, you will need to substitute `foo` with the symbol of your custom chain throughout:
+It's important that most of the properties and values in your module's config object match those of other nodes which participate in this blockchain network or else your node will not be able to reach consensus with the rest of the network about the state of the blockchain.
 
-- The module name (`foo_chain`)
-- The value of `genesisPath` (`../../genesis/mainnet/foo-genesis.json`)
-- The value of `components.logger.logFileName` (`logs/mainnet/foo.log`)
-
+The choice of database engine is one of the configurations which can be different on a node-by-node basis.
 If you want to use SQLite instead of Postgres, the object under `dal` should look like this instead:
 
 ```json
@@ -120,7 +118,7 @@ If you want to use SQLite instead of Postgres, the object under `dal` should loo
 }
 ```
 
-Again, substitute `foo` with the appropriate custom chain symbol in `filename`.
+Remember to substitute `foo` with the appropriate custom chain symbol in `filename`.
 
 ## 5. Start your node
 
