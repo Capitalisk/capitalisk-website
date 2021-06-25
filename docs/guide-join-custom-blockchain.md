@@ -5,9 +5,13 @@ sidebar_label: Join a custom blockchain
 slug: /join-custom-blockchain
 ---
 
+## Overview
+
+This guide assumes that the custom blockchain symbol will be `foo` - You should substitute `foo` with the relevant blockchain symbol everywhere (including all file names) as you go through this guide. The blockchain symbol (also called network symbol) is a unique symbol or acronym used to represent a blockchain (E.g. for listing on exchanges).
+
 ## 1. Requirements
 
-### 1.1 Hardware requirements
+### 1.1 Machine/instance requirements
 
 - A machine/instance with a publicly exposed IP address (E.g. from a cloud service provider).
 - 100GB of hard drive space is recommended (this should be enough for several years of data).
@@ -16,7 +20,7 @@ slug: /join-custom-blockchain
 
 ### 1.2 A compatible LDEM node
 
-To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Setting up a new Capitalisk node](./) to setup a node.
+To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Set up a new Capitalisk node](./) to setup a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
 
 ### 1.3 LDPoS Commander CLI
 
@@ -43,13 +47,13 @@ If the command outputs a version number, it means that the installation was succ
 ## 2. Add the genesis file to your node
 
 You need to get a copy of the custom blockchain's genesis JSON file from existing network participants.
-Once you have it, paste this file at the following relative relative path:
+Once you have it, paste it in the file at the following (relative) path (`capitalisk-core` is the directory where your node's source code is located):
 
 ```
 capitalisk-core/genesis/mainnet/foo-genesis.json
 ```
 
-Note that `capitalisk-core` is the directory where your node's source code is located.
+Remember to replace `foo` in the filename above with the symbol of the blockchain you want to join.
 
 ## 3. Create a new database
 
@@ -57,8 +61,8 @@ If using SQLite, the database file will be created automatically so you can skip
 
 If using Postgres, you will need to create a new database to store the blockchain data.
 
-Create a new Postgres database. If your blockchain is called `foo` you may want to call it `foo_main` (for mainnet).
-The following commands may be different depending on your Postgres setup (change `foo_main` with an appropriate database name):
+Create a new Postgres database. If the blockchain is called `foo` you may want to call it `foo_main` (for mainnet).
+The following commands may be different depending on your Postgres setup (change `foo_main` with an appropriate database name for the relevant chain):
 
 ```shell script
 postgres createdb foo_main
@@ -103,7 +107,7 @@ The object might look like this (though it will likely have some different value
 }
 ```
 
-It's important that most of the properties and values in your module's config object match those of other nodes which participate in this blockchain network or else your node will not be able to reach consensus with the rest of the network about the state of the blockchain.
+It's important that most of the properties and values in your module's config object match those of other nodes which participate in this blockchain network or else your node will not be able to reach consensus with the rest of the network.
 
 The choice of database engine is one of the configurations which can be different on a node-by-node basis.
 If you want to use SQLite instead of Postgres, the object under `dal` should look like this instead:

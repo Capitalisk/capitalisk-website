@@ -49,7 +49,7 @@ You can type `help` at any time to see the full list of available commands.
 
 To create a multisig wallet on the target blockchain, you first need to create a new regular account:
 
-### 2.2. Make sure that all participating members have setup their multisigPublicKey
+### 2.2. Make sure that all participating members have set up their multisigPublicKey
 
 In order to add other accounts as members of a multisig account, you first need to make sure that each of those accounts has registered a `multisigPublicKey` (this is the public key which will be used to verify the member's signatures).
 If some member accounts do not have a multisig public key, then the multisig account registration in the next step (`2.5`) will not work - The transaction will still be processed and fees will be charged but it will be a no-op.
@@ -64,7 +64,7 @@ account get
 It will prompt you for the prospective member's account address.
 The output might look like this:
 
-```
+```json
 {
   "address": "clsk65d1fcabf86fc5eef5844b6065d786be4ec3fcd9",
   "type": "sig",
@@ -97,7 +97,7 @@ transaction post register-multisig-details
 They can either specify a new passphrase or re-use their personal account's main passphrase as the multisig passphrase.
 Once all prospective members have individually registered a `multisigPublicKey` key on their personal accounts, you can continue with the next step to register the main multisig account.
 
-### 2.3. Create a new account to convert to a multisig account
+### 2.3. Create a new account to convert to a multisig account later
 
 ```
 account generate

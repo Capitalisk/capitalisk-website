@@ -1,11 +1,11 @@
 ---
-id: guide-setup
-title: Setup a new Capitalisk node
-sidebar_label: Setup a new node
+id: guide-set-up
+title: Set up a new Capitalisk node
+sidebar_label: Set up a new node
 slug: /
 ---
 
-## 1. Hardware Requirements
+## 1. Machine/instance requirements
 
 - A machine/instance with a publicly exposed IP address (E.g. from a cloud service provider).
 - 100GB of hard drive space is recommended (this should be enough for several years of data).
@@ -47,7 +47,7 @@ sudo snap install node --channel=14/stable --classic
 sudo apt-get install git-all
 ```
 
-## 4. Clone and setup the capitalisk-core node
+## 4. Clone and set up the capitalisk-core node
 
 - Clone the Git repo to your host:
 
@@ -111,7 +111,7 @@ sudo apt-get update
 sudo apt-get -y install postgresql
 ```
 
-## 5.2.3 Setup the Postgres database for the node
+## 5.2.3 Set up the Postgres database for the node
 
 - Log into postgres:
 

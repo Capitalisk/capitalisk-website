@@ -1,16 +1,16 @@
 ---
-id: guide-setup-ldem
-title: Setup on an existing node
-sidebar_label: Setup on an existing node
-slug: /setup-ldem
+id: guide-set-up-ldem
+title: Set up on an existing node
+sidebar_label: Set up on an existing node
+slug: /set-up-ldem
 ---
 
 ## Overview
 
-Capitalisk can be setup as a module on any [LDEM](https://github.com/Capitalisk/ldem) node such as a [Leasehold](https://leasehold.io/) node.
+Capitalisk can be set up as a module on any [LDEM](https://github.com/Capitalisk/ldem) node such as a [Leasehold](https://leasehold.io/) node.
 It allows a single node to participate in multiple blockchains at the same time; this feature allows DEX markets to be created between those blockchains.
 
-## 1. Hardware Requirements
+## 1. Machine/instance requirements
 
 - A machine/instance with a publicly exposed IP address (E.g. from a cloud service provider).
 - 100GB of hard drive space is recommended (this should be enough for several years of data).

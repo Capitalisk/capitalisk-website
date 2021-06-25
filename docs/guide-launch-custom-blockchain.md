@@ -7,7 +7,7 @@ slug: /launch-custom-blockchain
 
 ## Overview
 
-This guide will show you how to setup the first node of your new custom blockchain and then show you how to get additional nodes to join it.
+This guide will show you how to set up the first node of your new custom blockchain and then show you how to get additional nodes to join it.
 If you run into any issues, feel free to reach out to people from the Capitalisk or Leasehold communities for assistance.
 
 A Capitalisk node runs on an decentralized engine called [LDEM](https://github.com/Capitalisk/ldem) - It allows a single node to efficiently participate in multiple blockchains.
@@ -24,7 +24,7 @@ This guide assumes that the new custom blockchain symbol will be `foo` - You sho
 
 ## 1. Requirements
 
-### 1.1 Hardware requirements
+### 1.1 Machine/instance requirements
 
 - A machine/instance with a publicly exposed IP address (E.g. from a cloud service provider).
 - 100GB of hard drive space is recommended (this should be enough for several years of data).
@@ -33,7 +33,7 @@ This guide assumes that the new custom blockchain symbol will be `foo` - You sho
 
 ### 1.2 A compatible LDEM node
 
-To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Setting up a new Capitalisk node](./) to setup a node.
+To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Set up a new Capitalisk node](./) to setup a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
 
 ### 1.3 LDPoS Commander CLI
 
@@ -77,10 +77,9 @@ ldpos account generate
 
 It will prompt you for the network symbol of your custom blockchain.
 
-The output should look like this:
+The output object should look like this:
 
-```
-GENERATED WALLET AND PUBLIC KEYS:
+```json
 {
   "passphrase": "correct subway helmet chalk degree object cargo inquiry window goddess monster remain",
   "address": "foo95bb3611a9796d2c4a1a352632331df4330987b8",
@@ -218,6 +217,8 @@ You can start the node using PM2:
 ```shell script
 pm2 start index.js --name "ldem-node" -o "/dev/null" -e "/dev/null"
 ```
+
+If you get any errors, make sure that you don't have an existing node already running. If you do, you can shut it down using `pm2 delete ldem-node`.
 
 You should check the logs using the following command:
 
