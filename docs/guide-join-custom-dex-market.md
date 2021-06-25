@@ -20,12 +20,12 @@ This guide assumes that the custom quote chain symbol will be `foo` - You should
 
 ### 1.2. A compatible LDEM node with the relevant chain modules installed
 
-To create a custom DEX market, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the [Set up a new Capitalisk node](./) guide to set up a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
+To create a custom DEX market, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the [Set up a new Capitalisk node](/docs/) guide to set up a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
 
 For a node to provide a DEX market between 2 different blockchains, it needs to participate in both of those blockchains - This means that your node needs to run an instance of both chain modules.
 Since a Capitalisk node already supports the `clsk` blockchain by default, you only need to set up 1 additional blockchain module.
 
-You can join an existing blockchain by following the [Join a custom blockchain](join-custom-blockchain) guide.
+You can join an existing blockchain by following the [Join a custom blockchain](/docs/join-custom-blockchain) guide.
 
 Once you have set up the relevant chain module and your node is in sync with both blockchains (base chain and quote chain), you can start setting up your DEX market.
 
@@ -134,7 +134,7 @@ After you've copied the DEX market config inside your `config.json` file, you wi
 
 ## 3. Set up DEX HTTP API
 
-You should follow the [Set up DEX HTTP API](set-up-dex-http-api) guide to expose your DEX market's HTTP API.
+You should follow the [Set up DEX HTTP API](/docs/set-up-dex-http-api) guide to expose your DEX market's HTTP API.
 The HTTP API is necessary if you want people to connect to your node and trade through it using the [LDEX trading application](https://ldex.trading/trade/).
 
 ## 4. Start your node

@@ -33,7 +33,7 @@ This guide assumes that the new custom blockchain symbol will be `foo` - You sho
 
 ### 1.2 A compatible LDEM node
 
-To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Set up a new Capitalisk node](./) to setup a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
+To create a custom blockchain, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the guide [Set up a new Capitalisk node](/docs/) to setup a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
 
 ### 1.3 LDPoS Commander CLI
 
@@ -235,7 +235,7 @@ You will need to provide participants with the following things:
 
 - A copy of your prepared `foo-genesis.json` file from step `#2`.
 - An exact copy of your module config object from step `#4`.
-- A link to this guide: [Join a custom blockchain](join-custom-blockchain).
+- A link to this guide: [Join a custom blockchain](/docs/join-custom-blockchain).
 
 You may want to provide additional assistance to new participants depending on their technical abilities; it can be helpful to compare logs with other participants to ensure that their nodes are running correctly.
 

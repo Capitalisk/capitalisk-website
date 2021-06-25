@@ -25,13 +25,13 @@ As you go through this guide, you should substitute `foo` with your own blockcha
 
 ### 1.2. A compatible LDEM node with the relevant chain modules installed
 
-To create a custom DEX market, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the [Set up a new Capitalisk node](./) guide to set up a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
+To create a custom DEX market, you first need to have an [LDEM](https://github.com/Capitalisk/ldem) node - Any node which is based on the LDEM engine is fine; this includes a [Leasehold](https://www.leasehold.io/) node or a Capitalisk node. But for the purpose of this guide, it is recommended to use a Capitalisk node - So you should follow the [Set up a new Capitalisk node](/docs/) guide to set up a node. Make sure that you also have the `pm2` command installed globally on your node (`sudo npm install -g pm2`).
 
 For a node to provide a DEX market between 2 different blockchains, it needs to participate in both of those blockchains - This means that your node needs to run an instance of both chain modules.
 Since a Capitalisk node already supports the `clsk` blockchain by default, you only need to set up 1 additional blockchain module - You can either launch this new blockchain or join an existing one.
 
-- To launch a new custom blockchain, you should follow the [Launch a custom blockchain](launch-custom-blockchain) guide.
-- To join an existing blockchain, you should follow the [Join a custom blockchain](join-custom-blockchain) guide.
+- To launch a new custom blockchain, you should follow the [Launch a custom blockchain](/docs/launch-custom-blockchain) guide.
+- To join an existing blockchain, you should follow the [Join a custom blockchain](/docs/join-custom-blockchain) guide.
 
 Once you have set up the relevant chain module and your node is in sync with both blockchains (base chain and quote chain), you can start setting up your DEX market.
 
@@ -76,7 +76,7 @@ A DEX market needs to have a mutisignature (multisig) account on each of the 2 b
 A multisig account is an account which requires signatures from multiple members in order to make any transactions - It's like a blockchain-based bank account for your DAO.
 Multisig accounts can be set up with different rules which determine who the members are (based on their personal account addresses) and how many of them need to sign a transaction for it to be considered valid.
 
-Follow the [Create a multisig account](create-multisig-account) guide to create a multisig account on each affected chain.
+Follow the [Create a multisig account](/docs/create-multisig-account) guide to create a multisig account on each affected chain.
 You will need to create one on the `clsk` blockchain (the base chain) and one on the `foo` blockchain (the one you want to use as the quote chain).
 It's strongly recommended that both multisig accounts have the same set of people as members.
 It's also strongly recommended that each multisig account be set up to require signatures from more than 50% of its members.
@@ -196,7 +196,7 @@ The most important ones are:
 
 ## 4. Set up DEX HTTP API
 
-You should follow the [Set up DEX HTTP API](set-up-dex-http-api) guide to expose your DEX market's HTTP API.
+You should follow the [Set up DEX HTTP API](/docs/set-up-dex-http-api) guide to expose your DEX market's HTTP API.
 The HTTP API is necessary if you want people to connect to your node and trade through it using the (LDEX trading application)[https://ldex.trading/trade/].
 
 ## 5. Start your node
@@ -224,7 +224,7 @@ You can change the `fileLogLevel` and `consoleLogLevel` in the `lisk_dex_foo_cls
 You will need to provide participants with the following things:
 
 - A copy of your module config object from step `#3` but **[IMPORTANT] make sure that you remove ALL OCCURRENCES of your personal member passphrase and memberAddress from the config object first (from each of the two chains)!** - Each DEX member will need to replace those values with their own `memberAddress` and `passphrase`.
-- A link to this guide: [Join a custom DEX market](join-custom-dex-market).
+- A link to this guide: [Join a custom DEX market](/docs/join-custom-dex-market).
 
 You may want to provide additional assistance to new participants depending on their technical abilities; it can be helpful to compare logs with other participants to ensure that their nodes are running correctly.
 

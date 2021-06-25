@@ -17,7 +17,7 @@ slug: /set-up-dex-http-api
 ### 1.2. A compatible LDEM node with the relevant DEX HTTP API module installed
 
 In order to expose the DEX HTTP API, you first need to have an LDEM node.
-To set up a DEX node, follow the [Launch a custom DEX market](launch-custom-dex-market) guide or the [Join a custom DEX market](join-custom-dex-market) guide.
+To set up a DEX node, follow the [Launch a custom DEX market](/docs/launch-custom-dex-market) guide or the [Join a custom DEX market](/docs/join-custom-dex-market) guide.
 
 You will also need to install the `lisk-dex-http-api` module on your node - To do this, you should navigate to your node's main directory using the `cd` command (typically `capitalisk-core/`).
 Once inside, you will need to install the module using this command:
