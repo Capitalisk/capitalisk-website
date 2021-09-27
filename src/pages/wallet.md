@@ -11,8 +11,13 @@ LDPoS Wallet is a desktop and web browser application for browsing and interacti
 
 ### Hosted web wallet
 
-Official web interface: https://capitalisk.com/wallet/ldpos/  
+Official web interface: https://capitalisk.com/wallet/ldpos/
 The hosted web wallet also acts as a block explorer.
+
+### Binaries
+
+Official binaries for various operating systems can be found on github: https://github.com/Capitalisk/ldpos-wallet/releases
+These binaries aren't signed as of yet.
 
 ### Desktop wallet
 
