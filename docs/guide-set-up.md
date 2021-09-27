@@ -35,8 +35,10 @@ nvm install 12.18.2
 
 ### 2.2 Installing via snap
 
+**NOTE:** Not recommended for machines with low disk space.
+
 ```sh
-sudo snap install node --channel=14/stable --classic
+sudo snap install node --channel=12/stable --classic
 ```
 
 ## 3. Install Git
