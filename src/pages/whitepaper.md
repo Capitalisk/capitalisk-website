@@ -24,7 +24,7 @@ Capitalisk is a deflationary cryptocurrency. The maximum token supply is 100 mil
 
 ### 1.3 How does Capitalisk relate to Lisk and Leasehold blockchains?
 
-Capitalisk is intended to be a sidechain of Lisk and is itself intended to be used as a base token for new DEX markets.
+Capitalisk is intended to be a sidechain of Lisk. It's a base token for a new ecosystem of DEX cryptocurrency markets.
 The Leasehold (LSH) blockchain aims to be connected to Capitalisk (CLSK) via a DEX market. The goal of Leasehold is to act as a base token (2nd level sidechain) to represent the real estate industry within the Capitalisk DEX ecosystem. One of the goals for this ecosystem is that new sidechain tokens will spawn up to represent various industries and they will themselves act as base tokens for 3rd level sidechains which would represent specific companies or projects within those industries. The hope for the ecosystem is that it will organize itself into a hierarchy of sidechains with multiple levels.
 
 ### 1.4 How will CLSK tokens be distributed?
@@ -32,7 +32,7 @@ The Leasehold (LSH) blockchain aims to be connected to Capitalisk (CLSK) via a D
 The team behind Capitalisk does not intend to sell any CLSK tokens; instead, all tokens will be airdropped to Leasehold investors and Lisk voters according to the following allocations:
 
 - 50% to Leasehold token holders.
-- 38% to Lisk token holders who vote for `Lisk Initiative` (specifics will be revealed after Lisk v3 launch).
+- 38% to Lisk token holders who vote for the Capitalisk buyback group.
 - 10% to Leasehold directors, LDEX members and Capitalisk contributors.
 - 2% reserved for community fund for future development, partnerships, marketing, etc...
 
