@@ -292,6 +292,7 @@ In the `config.json`:
   "genesisPath": "../../genesis/mainnet/genesis.json",
   "forgingCredentials": [
     {
+      "walletAddress": "wallet address goes here",
       "forgingPassphrase": "passphrase goes here"
     }
   ]
