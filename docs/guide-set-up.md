@@ -290,6 +290,7 @@ In the `config.json`:
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
   "genesisPath": "../../genesis/mainnet/genesis.json",
+  "keyIndexDirPath": "data",
   "forgingCredentials": [
     {
       "walletAddress": "wallet address goes here",
