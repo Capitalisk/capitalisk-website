@@ -212,8 +212,6 @@ Description=capitalisk-core
 After=network.target
 [Service]
 Type=simple
-
-User=<user>
 ```
 
 Let's enable and restart the daemons:
