@@ -9,10 +9,13 @@ slug: /
 
 - A machine/instance with a publicly exposed IP address (E.g. from a cloud service provider).
 - 100GB of hard drive space is recommended (this should be enough for several years of data).
+  - OPTIONAL: To reduce node costs, block storage be mounted to run a cheaper node. The disk space can be increased over time.
 - Port 8001 needs to be open for inbound TCP traffic.
 - All ports should be open for outbound TCP traffic.
 
 ## 2. Install Node.js
+
+Install either `nvm` or `node`.
 
 ### 2.1 Installing using `nvm`
 
@@ -35,7 +38,7 @@ nvm install 12.18.2
 
 ### 2.2 Installing via snap
 
-**NOTE:** Not recommended for machines with low disk space.
+> **NOTE:** Not recommended for machines with low disk space.
 
 ```sh
 sudo snap install node --channel=12/stable --classic
@@ -145,7 +148,9 @@ create database capitalisk_main;
 sudo service postgresql restart
 ```
 
-## 6. Start the node
+## 6. Setting up and starting the node
+
+Either with `PM2` or `systemd`.
 
 ### 6.1 PM2
 
@@ -182,7 +187,7 @@ Adding an entry to `systemd`:
 sudo nano /lib/systemd/system/capitalisk-core.service
 ```
 
-And paste:
+And paste, substitute `<user>` with your user:
 
 ```sh
 [Unit]
@@ -192,13 +197,23 @@ After=network.target
 Type=simple
 User=<user>
 # If using snap it should be /snap/bin/node ...
-ExecStart=/bin/node /home/<user>/capitalisk-core/index.js
+# If using node it should be /bin/node
+# This is an example with NVM:
+ExecStart=/home/<user>/.nvm/versions/node/v12.18.2/bin/node /home/<user>/capitalisk-core/index.js
 Restart=on-failure
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=capitalisk-core
+WorkingDirectory=/home/<user>/capitalisk-core
 [Install]
 WantedBy=multi-user.target
+[Unit]
+Description=capitalisk-core
+After=network.target
+[Service]
+Type=simple
+
+User=<user>
 ```
 
 Let's enable and restart the daemons:
@@ -207,13 +222,6 @@ Let's enable and restart the daemons:
 sudo systemctl enable capitalisk-core
 sudo systemctl daemon-reload
 sudo systemctl restart rsyslog
-```
-
-Capitalisk will need a directory to write logs to. Using `systemd` it uses `/logs/mainnet`:
-
-```sh
-sudo mkdir -p /logs/mainnet
-sudo chown -R <user>:<user> /logs
 ```
 
 ```sh
@@ -252,11 +260,24 @@ or
 sudo systemctl stop capitalisk-core
 ```
 
+> **NOTE:** `capitalisk-core` via systemd will always restart on reboot until you disable the process `sudo systemctl disable capitalisk-core`.
+
 ## 7.3 Enabling logging for node
 
 - Log level can be changed under the `logger` section of `config.json` under the `capitalisk_chain` module entry - Possible values include: `error`, `debug` or `info`.
 - To easily track the logs you can use `tail -f <path>/<to>/<logs>`
-- Get specific information about a delegate `cat /logs/mainnet/clsk.log | grep "<address>"`
+- Get specific information about a delegate `cat ~/capitalisk-core/logs/mainnet/clsk.log | grep "<address>"`
+
+Alternatively all logs can be enabled and truncated via `crontab -e`:
+
+```
+*/30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/clsk.log
+*/30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/default.log
+*/30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/lsk.log
+*/30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/dex-clsk-lsk.log
+```
+
+This truncates the logs [every 30 minutes](https://crontab.guru/#*/30_*_*_*_*).
 
 ## 8. Check status of the node
 
@@ -279,9 +300,30 @@ PS. Please change port, if changed in the config.
 ### 8.2 Using logs
 
 - By default, CLSK node should work without any issues.
-- If `pm2 ls` shows red status for any of the spawned process, it means we need to check logs for exact error.
+- Observing errors on the node:
+  - PM2: If `pm2 ls` shows red status for any of the spawned process, it means we need to check logs for exact error.
+  - `systemd`: `cat ~/capitalisk-core/logs/mainnet/clsk.log | grep "<statement>"`; replace statement with your search query.
 - Edit either `config.json` (in case of postgres) or `config.sqlite.json` (in case of SQLite) using nano, and replace `error` with `info` for logging, save file.
-- Run `pm2 logs`, one of the statements should contain `Received valid block ...`, it means node is syncing and working just fine.
+- Verifying the node is synching and working:
+  - PM2: Run `pm2 logs`, one of the statements should contain `Received valid block ...`.
+  - ` systemd``: Run  `tail -f ~/capitalisk-core/logs/mainnet/clsk.log | grep "Received valid block ..."`. If the entries are increasing the node is synching successfully.
+
+If you want to monitor the `systemd` process you can alternative add an additional entry:
+
+```
+sudo nano /etc/rsyslog.d/capitalisk-core.conf
+```
+
+```
+if $programname == 'capitalisk-core' then /var/log/capitalisk-core.log
+& stop
+```
+
+```
+sudo systemctl restart rsyslog
+```
+
+> **NOTE:** You will need to truncate this logs via `sudo crontab -e`!
 
 ### 9. Adding a forging passphrase
 
