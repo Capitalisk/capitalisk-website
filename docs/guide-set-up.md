@@ -15,7 +15,6 @@ slug: /
 
 ## 2. Install Node.js
 
-Install either `nvm` or `node`.
 
 ### 2.1 Installing using `nvm`
 
@@ -36,9 +35,13 @@ nvm install 12.18.2
 
 - To install nvm on windows, follow https://github.com/coreybutler/nvm-windows
 
-### 2.2 Installing via snap
+### 2.2 Installing Node via package manager.
 
-> **NOTE:** Not recommended for machines with low disk space.
+Follow the guide from [Node.js](https://nodejs.org/en/download/package-manager/) for your distro.
+
+### 2.3 Installing via snap
+
+> **NOTE:** We don't recommend using snap.
 
 ```sh
 sudo snap install node --channel=12/stable --classic
