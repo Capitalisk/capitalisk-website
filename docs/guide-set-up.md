@@ -262,7 +262,7 @@ sudo systemctl stop capitalisk-core
 - Get specific information about a delegate `cat ~/capitalisk-core/logs/mainnet/clsk.log | grep "<address>"`
 
 <details close="true">
-<summary>Alternatively all logs can be enabled and truncated via `crontab -e`:</summary>
+<summary>Alternatively all logs can be enabled and truncated via <code>crontab -e</code>:</summary>
 <br />
 
 ```
@@ -306,7 +306,7 @@ PS. Please change port, if changed in the config.
   - ` systemd``: Run  `tail -f ~/capitalisk-core/logs/mainnet/clsk.log | grep "Received valid block ..."`. If the entries are increasing the node is synching successfully.
 
 <details close="true">
-<summary>If you want to monitor the `systemd` process you can alternative add an additional entry:</summary>
+<summary>If you want to monitor the <code>systemd</code> process you can alternative add an additional entry:</summary>
 <br />
 
 ```
