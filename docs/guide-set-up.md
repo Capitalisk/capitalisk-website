@@ -15,6 +15,8 @@ slug: /
 
 ## 2. Install Node.js
 
+> **NOTE**: We don't recommend using `snap`.
+
 
 ### 2.1 Installing using `nvm`
 
@@ -39,13 +41,6 @@ nvm install 12.18.2
 
 Follow the guide from [Node.js](https://nodejs.org/en/download/package-manager/) for your distro.
 
-### 2.3 Installing via snap
-
-> **NOTE:** We don't recommend using snap.
-
-```sh
-sudo snap install node --channel=12/stable --classic
-```
 
 ## 3. Install Git
 
@@ -199,7 +194,6 @@ After=network.target
 [Service]
 Type=simple
 User=<user>
-# If using snap it should be /snap/bin/node ...
 # If using node it should be /bin/node
 # This is an example with NVM:
 ExecStart=/home/<user>/.nvm/versions/node/v12.18.2/bin/node /home/<user>/capitalisk-core/index.js
