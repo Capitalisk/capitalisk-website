@@ -261,9 +261,9 @@ sudo systemctl stop capitalisk-core
 - To easily track the logs you can use `tail -f <path>/<to>/<logs>`
 - Get specific information about a delegate `cat ~/capitalisk-core/logs/mainnet/clsk.log | grep "<address>"`
 
-<details close>
+<details close="true">
 <summary>Alternatively all logs can be enabled and truncated via `crontab -e`:</summary>
-<br>
+<br />
 
 ```
 */30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/clsk.log
@@ -305,9 +305,9 @@ PS. Please change port, if changed in the config.
   - PM2: Run `pm2 logs`, one of the statements should contain `Received valid block ...`.
   - ` systemd``: Run  `tail -f ~/capitalisk-core/logs/mainnet/clsk.log | grep "Received valid block ..."`. If the entries are increasing the node is synching successfully.
 
-<details close>
+<details close="true">
 <summary>If you want to monitor the `systemd` process you can alternative add an additional entry:</summary>
-<br>
+<br />
 
 ```
 sudo nano /etc/rsyslog.d/capitalisk-core.conf
