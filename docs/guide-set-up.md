@@ -189,6 +189,7 @@ After=network.target
 [Service]
 Type=simple
 User=<user>
+WorkingDirectory=/home/<user>/capitalisk-core
 # If using snap it should be /snap/bin/node ...
 ExecStart=/bin/node /home/<user>/capitalisk-core/index.js
 Restart=on-failure
