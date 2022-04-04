@@ -17,7 +17,6 @@ slug: /
 
 > **NOTE**: We don't recommend using `snap`.
 
-
 ### 2.1 Installing using `nvm`
 
 - Follow https://github.com/nvm-sh/nvm to install nvm:
@@ -40,7 +39,6 @@ nvm install 12.18.2
 ### 2.2 Installing Node via package manager.
 
 Follow the guide from [Node.js](https://nodejs.org/en/download/package-manager/) for your distro.
-
 
 ## 3. Install Git
 
@@ -263,7 +261,9 @@ sudo systemctl stop capitalisk-core
 - To easily track the logs you can use `tail -f <path>/<to>/<logs>`
 - Get specific information about a delegate `cat ~/capitalisk-core/logs/mainnet/clsk.log | grep "<address>"`
 
-Alternatively all logs can be enabled and truncated via `crontab -e`:
+<details close>
+<summary>Alternatively all logs can be enabled and truncated via `crontab -e`:</summary>
+<br>
 
 ```
 */30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/clsk.log
@@ -273,6 +273,8 @@ Alternatively all logs can be enabled and truncated via `crontab -e`:
 ```
 
 This truncates the logs [every 30 minutes](https://crontab.guru/#*/30_*_*_*_*).
+
+</details>
 
 ## 8. Check status of the node
 
