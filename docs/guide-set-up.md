@@ -320,6 +320,7 @@ if $programname == 'capitalisk-core' then /var/log/capitalisk-core.log
 ```
 
 ```
+sudo systemctl daemon-reload
 sudo systemctl restart rsyslog
 ```
 
