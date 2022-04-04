@@ -305,7 +305,9 @@ PS. Please change port, if changed in the config.
   - PM2: Run `pm2 logs`, one of the statements should contain `Received valid block ...`.
   - ` systemd``: Run  `tail -f ~/capitalisk-core/logs/mainnet/clsk.log | grep "Received valid block ..."`. If the entries are increasing the node is synching successfully.
 
-If you want to monitor the `systemd` process you can alternative add an additional entry:
+<details close>
+<summary>If you want to monitor the `systemd` process you can alternative add an additional entry:</summary>
+<br>
 
 ```
 sudo nano /etc/rsyslog.d/capitalisk-core.conf
@@ -328,6 +330,8 @@ tail -f /var/log/capitalisk-core.log
 ```
 
 > **NOTE:** You will need to truncate this logs via `sudo crontab -e`!
+
+</details>
 
 ### 9. Adding a forging passphrase
 
