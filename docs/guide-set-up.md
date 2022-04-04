@@ -324,6 +324,12 @@ sudo systemctl daemon-reload
 sudo systemctl restart rsyslog
 ```
 
+Then you can track any log via:
+
+```
+tail -f /var/log/capitalisk-core.log
+```
+
 > **NOTE:** You will need to truncate this logs via `sudo crontab -e`!
 
 ### 9. Adding a forging passphrase
