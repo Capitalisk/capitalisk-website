@@ -7,12 +7,13 @@ title: Capitalisk Whitepaper
 
 ### 1.1 Overview
 
-Capitalisk (CLSK) is a general purpose token designed to promote the growth and adoption of DEX markets within the Lisk (https://lisk.io/) and Leasehold (https://leasehold.io/) ecosystems and to promote collaboration between different DEX federations. It is intended to serve as a fundraising platform (Decentralized Venture Capital) for new tokens to be listed on various DEX markets - Its underlying technology should also serve as a blueprint for new kinds of Lisk and Leasehold sidechains. Capitalisk is optimized for maximum compatibility with LDEX (https://ldex.trading/) and other federations built with the `lisk-dex` SDK.
+Capitalisk (CLSK) is a general purpose token designed to promote the growth and adoption of an ecosystem of DEX markets and to promote collaboration between different DEX federations. It is also intended to serve as a fundraising platform (Decentralized Venture Capital) for newly listed tokens. Capitalisk's underlying technology should also serve as a blueprint for new sidechains. It is optimized for maximum compatibility with LDEX (https://ldex.trading/) and other federations built with the `lisk-dex` SDK.
 
 Capitalisk was designed from the ground up to have the following characteristics:
 
 - Simple DPoS (Delegated Proof of Stake) consensus with instant block finality.
 - Deflationary token supply.
+- Fast block time.
 - Signature scheme which is resistant to quantum computing algorithms.
 - Signature scheme which is stateful and supports novel features such as changing wallet passphrases.
 - Dynamic multisig wallets whose memberships can change over time (e.g. for DEX and other DAO use cases).
@@ -23,7 +24,7 @@ Capitalisk is a deflationary cryptocurrency. The maximum token supply is 100 mil
 
 ### 1.3 How does Capitalisk relate to Lisk and Leasehold blockchains?
 
-Capitalisk is intended to be a sidechain of Lisk and can itself be used as a base token for DEX markets.
+Capitalisk is intended to be a sidechain of Lisk. It's a base token for a new ecosystem of DEX cryptocurrency markets.
 The Leasehold (LSH) blockchain aims to be connected to Capitalisk (CLSK) via a DEX market. The goal of Leasehold is to act as a base token (2nd level sidechain) to represent the real estate industry within the Capitalisk DEX ecosystem. One of the goals for this ecosystem is that new sidechain tokens will spawn up to represent various industries and they will themselves act as base tokens for 3rd level sidechains which would represent specific companies or projects within those industries. The hope for the ecosystem is that it will organize itself into a hierarchy of sidechains with multiple levels.
 
 ### 1.4 How will CLSK tokens be distributed?
@@ -31,7 +32,7 @@ The Leasehold (LSH) blockchain aims to be connected to Capitalisk (CLSK) via a D
 The team behind Capitalisk does not intend to sell any CLSK tokens; instead, all tokens will be airdropped to Leasehold investors and Lisk voters according to the following allocations:
 
 - 50% to Leasehold token holders.
-- 38% to Lisk token holders who vote for `Lisk Initiative` (specifics will be revealed after Lisk v3 launch).
+- 38% to Lisk token holders who vote for the Capitalisk buyback group.
 - 10% to Leasehold directors, LDEX members and Capitalisk contributors.
 - 2% reserved for community fund for future development, partnerships, marketing, etc...
 
@@ -44,7 +45,7 @@ Airdrop participants will need to prove their eligibility in order to claim CLSK
 
 Capitalisk is the first cryptocurrency built on top of LDPoS; a set of modules which implement a stateful, quantum-resistant DPoS (Delegated Proof of Stake) consensus algorithm.
 Quantum resistance is achieved through the use of Lamport One-Time Signatures combined with Merkle Signature Trees to allow a single public key root hash to be reused multiple times.
-The algorithm is stateful; a wallet's public key is changed every 64 transactions; this statefulness provides some novel features including the ability for a user to change their wallet's passphrase.
+The algorithm is stateful; a wallet's public key is changed every 64 transactions; this statefulness provides some novel features including the ability for a user to change their account's passphrase.
 
 ### 2.2 Custom modules
 

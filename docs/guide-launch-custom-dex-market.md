@@ -197,7 +197,7 @@ The most important ones are:
 ## 4. Set up DEX HTTP API
 
 You should follow the [Set up DEX HTTP API](/docs/set-up-dex-http-api) guide to expose your DEX market's HTTP API.
-The HTTP API is necessary if you want people to connect to your node and trade through it using the (LDEX trading application)[https://ldex.trading/trade/].
+The HTTP API is necessary if you want people to connect to your node and trade through it using the [LDEX trading application](https://ldex.trading/trade/).
 
 ## 5. Start your node
 

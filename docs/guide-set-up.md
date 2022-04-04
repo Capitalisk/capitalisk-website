@@ -292,7 +292,9 @@ npm i -g ldpos-commander
 ldpos IP_ADDRESS:8001 block get max-height
 ```
 
-PS. Please change port, if changed in the config.
+Substitute `IP_ADDRESS` with the IP address of your node's host.
+Port `8001` is the default; make sure that this port is open on your host (I.e. not blocked by firewall).
+The port may be different depending on your node's config.
 
 ### 8.2 Using logs
 
@@ -342,8 +344,10 @@ In the `config.json`:
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
   "genesisPath": "../../genesis/mainnet/genesis.json",
+  "keyIndexDirPath": "data",
   "forgingCredentials": [
     {
+      "walletAddress": "wallet address goes here",
       "forgingPassphrase": "passphrase goes here"
     }
   ]
