@@ -15,8 +15,6 @@ slug: /
 
 ## 2. Install Node.js
 
-> **NOTE**: We don't recommend using `snap`.
-
 ### 2.1 Installing using `nvm`
 
 - Follow https://github.com/nvm-sh/nvm to install nvm:
