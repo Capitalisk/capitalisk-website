@@ -74,23 +74,20 @@ npm install
 
 - As of now, following databases are supported
 
-1. SQLite - Ready to use out of the box.
-2. Postgres - Need to install and configure separate postgres service.
+1. Postgres (default, recommended)
+2. SQLite
 
-## 5.1 Installing SQLite
+You should choose one of them (either do steps 5.1 or 5.2 below).
 
-- SQLite binaries are automatically installed as a part of `npm install` or `yarn install`.
-- Just make sure, no warning or error is thrown while installing npm packages for `sqlite3`.
+## 5.1 Install Postgres
 
-## 5.2 Install Postgres
-
-### 5.2.1 Installing via Ubuntu repositories
+### 5.1.1 Installing via Ubuntu repositories
 
 ```sh
 sudo apt install postgresql
 ```
 
-### 5.2.2 Installing via PostgreSQL repositories
+### 5.1.2 Installing via PostgreSQL repositories
 
 - Follow https://www.postgresql.org/download/ to install Postgres on linux/windows/mac.
 
@@ -112,7 +109,7 @@ sudo apt-get update
 sudo apt-get -y install postgresql
 ```
 
-## 5.2.3 Set up the Postgres database for the node
+## 5.1.3 Set up the Postgres database for the node
 
 - Log into postgres:
 
@@ -142,6 +139,36 @@ create database capitalisk_main;
 
 ```
 sudo service postgresql restart
+```
+
+## 5.2 Installing SQLite
+
+While inside the `capitalisk-core` directory:
+
+- Install `ldpos-sqlite-dal`:
+```
+npm install ldpos-sqlite-dal --save
+```
+
+- In the `config.json` file, add the SQLite `components.dal` object to the `capitalisk_chain` module so that it looks like this:
+```
+"capitalisk_chain": {
+  "modulePath": "node_modules/ldpos-chain",
+  "genesisPath": "../../genesis/mainnet/genesis.json",
+  "keyIndexDirPath": "data",
+  "components": {
+    "dal": {
+      "libPath": "node_modules/ldpos-sqlite-dal",
+      "client": "sqlite3",
+      "connection": {
+        "filename": "db.sqlite3"
+      }
+    },
+    "logger": {
+      "consoleLogLevel": "info"
+    }
+  }
+}
 ```
 
 ## 6. Setting up and starting the node
@@ -337,7 +364,7 @@ tail -f /var/log/capitalisk-core.log
 
 ### 9. Adding a forging passphrase
 
-In the `config.json`:
+In the `config.json` file:
 
 ```json
 ...
