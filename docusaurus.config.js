@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'Capitalisk|Decentralized blockchain crypto',
+    title: 'Capitalisk | Quantum Resistant Cryptocurrency Ecosystem',
     tagline: 'Decentralized free markets',
     url: 'https://capitalisk.com',
     baseUrl: '/',
