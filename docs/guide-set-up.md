@@ -21,14 +21,10 @@ slug: /
 
 ```shell script
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-```
 
-```shell script
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-```
 
-```shell script
 nvm install 12.18.2
 ```
 
@@ -66,16 +62,24 @@ cd capitalisk-core
 npm install
 ```
 
-- Note that if you provided a custom password in step 3 instead of the default one (`'password'`), you will need to update the database details inside your main `capitalisk-core/config.json` file to match (so that the node is able to connect to your database).
+:::note
+
+If you provided a custom password in step 3 instead of the default one (`'password'`), you will need to update the database details inside your main `capitalisk-core/config.json` file to match (so that the node is able to connect to your database).
+
+:::
 
 ## 5. Capitalisk node supports multiple databases
 
+:::caution
+
+Postgres is the recommended choice.
+
+:::
+
 - As of now, following databases are supported
 
-1. Postgres (default, recommended)
+1. Postgres
 2. SQLite
-
-You should choose one of them (either do steps 5.1 or 5.2 below).
 
 ## 5.1 Install Postgres
 
@@ -144,12 +148,14 @@ sudo service postgresql restart
 While inside the `capitalisk-core` directory:
 
 - Install `ldpos-sqlite-dal`:
+
 ```
 npm install ldpos-sqlite-dal --save
 ```
 
 - In the `config.json` file, add the SQLite `components.dal` object to the `capitalisk_chain` module so that it looks like this:
-```
+
+```json title="/config.js"
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
   "genesisPath": "../../genesis/mainnet/genesis.json",
@@ -210,7 +216,7 @@ sudo nano /lib/systemd/system/capitalisk-core.service
 
 And paste, substitute `<user>` with your user:
 
-```sh
+```sh title="capitalisk-core.service"
 [Unit]
 Description=capitalisk-core
 After=network.target
@@ -240,9 +246,6 @@ Let's enable and restart the daemons:
 sudo systemctl enable capitalisk-core
 sudo systemctl daemon-reload
 sudo systemctl restart rsyslog
-```
-
-```sh
 sude systemctl start capitalisk-core
 ```
 
@@ -262,7 +265,11 @@ or
 sudo systemctl restart capitalisk-core
 ```
 
-- Note that if you make any changes to the `config.json` file, you will need to restart the node for the changes to take effect.
+:::note
+
+If you make any changes to the `config.json` file, you will need to restart the node for the changes to take effect.
+
+:::
 
 ## 7.2 Stopping the node
 
@@ -278,7 +285,11 @@ or
 sudo systemctl stop capitalisk-core
 ```
 
-> **NOTE:** `capitalisk-core` via systemd will always restart on reboot until you disable the process `sudo systemctl disable capitalisk-core`.
+:::note
+
+`capitalisk-core` via systemd will always restart on reboot until you disable the process `sudo systemctl disable capitalisk-core`.
+
+:::
 
 ## 7.3 Enabling logging for node
 
@@ -290,7 +301,7 @@ sudo systemctl stop capitalisk-core
 <summary>Alternatively all logs can be enabled and truncated via <code>crontab -e</code>:</summary>
 <br />
 
-```
+```title="sudo crontab -e"
 */30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/clsk.log
 */30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/default.log
 */30 * * * * truncate -s 0 ~/capitalisk-core/logs/mainnet/lsk.log
@@ -340,7 +351,7 @@ The port may be different depending on your node's config.
 sudo nano /etc/rsyslog.d/capitalisk-core.conf
 ```
 
-```
+```sh title='capitalisk-core.conf'
 if $programname == 'capitalisk-core' then /var/log/capitalisk-core.log
 & stop
 ```
@@ -356,7 +367,11 @@ Then you can track any log via:
 tail -f /var/log/capitalisk-core.log
 ```
 
-> **NOTE:** You will need to truncate this logs via `sudo crontab -e`!
+:::note
+
+You will need to truncate this logs via `sudo crontab -e`!
+
+:::
 
 </details>
 

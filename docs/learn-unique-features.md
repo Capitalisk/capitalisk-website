@@ -5,5 +5,5 @@ sidebar_label: Unique features
 slug: /unique-features
 ---
 
-
-# Unique features
+- The `ldpos-chain` allows you to change passphrases. A transaction is needed for it to go in effect.
+- Interoperable multichain support.
