@@ -91,6 +91,7 @@ client = ldposClient.createClient(config);
     const minFees = await client.getMinFees();
     console.log('Minimum fees are', minFees.minTransactionFees.transfer);
 
+    // Prepare the transaction
     const tx = await client.prepareTransaction({
       type: 'transfer',
       recipientAddress: 'clsk65d4b765f0abe4dae5c564b4a6d2d7b70311fd9e',
@@ -100,6 +101,7 @@ client = ldposClient.createClient(config);
       message: 'Your first succesful transaction!',
     });
 
+    // Post the transaction to the blockchain
     await client.postTransaction(tx);
 
     process.exit(0);
