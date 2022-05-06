@@ -1,5 +1,5 @@
 module.exports = {
-  someSidebar: {
+  docs: {
     'Learn': [
       'learn-about-clsk',
       'learn-ldpos-wallet',
