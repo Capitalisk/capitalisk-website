@@ -155,7 +155,7 @@ npm install ldpos-sqlite-dal --save
 
 - In the `config.json` file, add the SQLite `components.dal` object to the `capitalisk_chain` module so that it looks like this:
 
-```json title="/config.js"
+```json title="config.js"
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
   "genesisPath": "../../genesis/mainnet/genesis.json",

@@ -54,7 +54,7 @@ TODO: Implement Faucet feature.
 
 :::
 
-```js title="/index.js"
+```js title="index.js"
 const ldposClient = require('ldpos-client');
 const bip39 = require('bip39');
 
