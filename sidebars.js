@@ -1,12 +1,12 @@
 module.exports = {
   docs: {
-    'Learn': [
+    Learn: [
       'learn-about-clsk',
       'learn-ldpos-wallet',
       'learn-unique-features',
       'learn-fees-on-clsk',
       'learn-glossary',
-
+      'learn-interconnectable-blockchains',
     ],
     'Node setup': [
       'guide-set-up',
@@ -20,8 +20,6 @@ module.exports = {
       'guide-join-custom-dex-market',
       'guide-set-up-dex-http-api',
     ],
-    'Developers': [
-      'developer-ldpos-client-js'
-    ]
+    Developers: ['developer-ldpos-client-js'],
   },
 };

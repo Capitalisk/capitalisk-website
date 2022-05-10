@@ -26,5 +26,5 @@ Capitalisk nodes are decentralized and charge fees per processed transaction. Ea
 Any transaction that does not contain enough fees are not being processed. To review fees you can simply run `ldpos fees` in the [`ldpos-commander`](https://github.com/Capitalisk/ldpos-commander).
 
 :::note
-Capitalisk is a supports dynamic fees
+Capitalisk supports dynamic fees
 :::

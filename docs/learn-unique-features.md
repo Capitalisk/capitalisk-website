@@ -5,7 +5,7 @@ sidebar_label: Unique features
 slug: /unique-features
 ---
 
-- The `ldpos-chain` allows you to change passphrases. A transaction is needed for it take effect.
+- The `ldpos-chain` allows you to change passphrases. A transaction is needed for it to take effect.
 - Interoperable multichain support.
 - Resistant to quantum computing attacks; achieved through the use of Lamport One-Time Signatures combined with Merkle Signature Trees to allow a single public key root hash to be reused multiple times.
 - Multiprocess engine, scales over cores.
