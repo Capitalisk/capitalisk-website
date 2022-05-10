@@ -1,7 +1,7 @@
 ---
 id: developer-ldpos-client-js
-title: SDK LDPoS Client JS
-sidebar_label: SDK LDPoS Client JS
+title: LDPoS SDK Client JS
+sidebar_label: LDPoS SDK Client JS
 slug: /ldpos-client-js
 ---
 
