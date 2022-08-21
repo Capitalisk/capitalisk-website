@@ -341,7 +341,7 @@ The port may be different depending on your node's config.
 - Edit either `config.json` (in case of postgres) or `config.sqlite.json` (in case of SQLite) using nano, and replace `error` with `info` for logging, save file.
 - Verifying the node is synching and working:
   - PM2: Run `pm2 logs`, one of the statements should contain `Received valid block ...`.
-  - ` systemd``: Run  `tail -f ~/capitalisk-core/logs/mainnet/clsk.log | grep "Received valid block ..."`. If the entries are increasing the node is synching successfully.
+  - `systemd`: Run  `tail -f ~/capitalisk-core/logs/mainnet/clsk.log | grep "Received valid block ..."`. If the entries are increasing the node is synching successfully.
 
 <details close="true">
 <summary>If you want to monitor the <code>systemd</code> process you can alternative add an additional entry:</summary>
