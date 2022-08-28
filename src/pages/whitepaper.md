@@ -7,7 +7,7 @@ title: Capitalisk Whitepaper
 
 ### 1.1 Overview
 
-Capitalisk (CLSK) is a general purpose token designed to promote the growth and adoption of an ecosystem of DEX markets and to promote collaboration between different DEX federations. It is also intended to serve as a fundraising platform (Decentralized Venture Capital) for newly listed tokens. Capitalisk's underlying technology should also serve as a blueprint for new sidechains. It is optimized for maximum compatibility with LDEX (https://ldex.trading/) and other federations built with the `lisk-dex` SDK.
+Capitalisk (CLSK) is a general purpose token designed to promote the growth and adoption of an ecosystem of DEX markets and to promote collaboration between different DEX federations. It is also intended to serve as a fundraising platform (Decentralized Venture Capital) for newly listed tokens. Capitalisk's underlying technology should also serve as a blueprint for new sidechains. It is optimized for maximum compatibility with LDEX (https://ldex.trading/) and other federations built with the `capitalisk-dex` SDK.
 
 Capitalisk was designed from the ground up to have the following characteristics:
 
@@ -22,9 +22,9 @@ Capitalisk was designed from the ground up to have the following characteristics
 
 Capitalisk is a deflationary cryptocurrency. The maximum token supply is 100 million CLSK. Forging delegates only earn CLSK from transaction fees.
 
-### 1.3 How does Capitalisk relate to Lisk and Leasehold blockchains?
+### 1.3 What is the goal of the Capitalisk ecosystem?
 
-Capitalisk is intended to be a sidechain of Lisk. It's a base token for a new ecosystem of DEX cryptocurrency markets.
+Capitalisk is intended to be a base token for a new ecosystem of DEX cryptocurrency markets.
 The Leasehold (LSH) blockchain aims to be connected to Capitalisk (CLSK) via a DEX market. The goal of Leasehold is to act as a base token (2nd level sidechain) to represent the real estate industry within the Capitalisk DEX ecosystem. One of the goals for this ecosystem is that new sidechain tokens will spawn up to represent various industries and they will themselves act as base tokens for 3rd level sidechains which would represent specific companies or projects within those industries. The hope for the ecosystem is that it will organize itself into a hierarchy of sidechains with multiple levels.
 
 ### 1.4 How will CLSK tokens be distributed?
@@ -121,12 +121,12 @@ Multisig wallets in Capitalisk can add or remove members over time provided that
 
 ### 2.13 Network topology
 
-Capitalisk is based on `lisk-p2p` and so its network partially overlaps with that of Lisk, Leasehold and potentially other Lisk-based blockchains which use `lisk-p2p`.
+Capitalisk is based on `lisk-p2p` and so its network partially overlaps with that of Lisk, Leasehold and potentially other blockchains which use `lisk-p2p`.
 This is made possible by the fact that nodes built on top of `LDEM` can run multiple blockchains at the same time.
 
 ![Multi-chain architecture](/img/multi-chain-architecture-medium.png)
 
-Nodes in the Lisk network form a sparse graph within which each node has a limited partial view of the network. This ensures that the network can scale indefinitely relative to the total number of nodes. The network topology is unstructured (non-deterministic) and involves frequent peer shuffling - This makes it essentially impossible to analyze the network topology, particularly as the network gets bigger over time.
+Nodes in the Capitalisk network form a sparse graph within which each node has a limited partial view of the network. This ensures that the network can scale indefinitely relative to the total number of nodes. The network topology is unstructured (non-deterministic) and involves frequent peer shuffling - This makes it essentially impossible to analyze the network topology, particularly as the network gets bigger over time.
 
 ### 2.14 P2P module-to-module routing
 
