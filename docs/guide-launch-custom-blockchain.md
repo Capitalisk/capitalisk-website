@@ -16,7 +16,7 @@ With LDEM, it's possible to launch a new/custom blockchain using an existing [Li
 For example, the Capitalisk blockchain itself is based on a white-label module called [ldpos-chain](https://github.com/Capitalisk/ldpos-chain).
 The [Leasehold](https://www.leasehold.io/) blockchain, on the other hand, is based on a different white-label module called [leasehold-chain](https://github.com/Leasehold/leasehold-chain) - The `leasehold-chain` module is a fork of `lisk-chain` so it is compatible with all the clients, wallets and tools from Lisk SDK v3.
 
-Both `ldpos-chain` and `leasehold-chain` are designed to work with [lisk-dex](https://github.com/Capitalisk/lisk-dex) - This means that any custom blockchain which is based on either of these two modules can be easily listed for trading on https://ldex.trading/ and also on any other compatible `lisk-dex` federation.
+Both `ldpos-chain` and `leasehold-chain` are designed to work with [capitalisk-dex](https://github.com/Capitalisk/capitalisk-dex) - This means that any custom blockchain which is based on either of these two modules can be easily listed for trading on https://ldex.trading/ and also on any other compatible `capitalisk-dex` federation.
 
 This guide focuses on how to launch a new custom blockchain based on the `ldpos-chain` module since that's the module which the Capitalisk blockchain is based on.
 

@@ -19,12 +19,12 @@ slug: /set-up-dex-http-api
 In order to expose the DEX HTTP API, you first need to have an LDEM node.
 To set up a DEX node, follow the [Launch a custom DEX market](/docs/launch-custom-dex-market) guide or the [Join a custom DEX market](/docs/join-custom-dex-market) guide.
 
-You will also need to install the `lisk-dex-http-api` module on your node - To do this, you should navigate to your node's main directory using the `cd` command (typically `capitalisk-core/`).
+You will also need to install the `capitalisk-dex-http-api` module on your node - To do this, you should navigate to your node's main directory using the `cd` command (typically `capitalisk-core/`).
 Once inside, you will need to install the module using this command:
 
 
 ```shell script
-npm install lisk-dex-http-api --save
+npm install capitalisk-dex-http-api --save
 ```
 
 ## 2. Add the relevant custom module config object
@@ -35,12 +35,12 @@ Inside this file, you should find a field called `modules` which is an array of 
 You will need to add a module to serve the HTTP API for your existing DEX module.
 
 ```json
-"lisk_dex_foo_clsk_http_api": {
+"capitalisk_dex_foo_clsk_http_api": {
   "moduleEnabled": true,
-  "modulePath": "node_modules/lisk-dex-http-api",
+  "modulePath": "node_modules/capitalisk-dex-http-api",
   "port": 8031,
   "enableCORS": true,
-  "dexModuleAlias": "lisk_dex_foo_clsk",
+  "dexModuleAlias": "capitalisk_dex_foo_clsk",
   "components": {
     "logger": {
       "fileLogLevel": "error",
@@ -53,8 +53,8 @@ You will need to add a module to serve the HTTP API for your existing DEX module
 After you've copied this object inside your `config.json` file, you need to change 3 properties/values:
 
 - `port`: This is the port on which to serve the HTTP API. Make sure that this port is exposed to the public internet (directly or indirectly through a proxy or iptables port redirect) - It's strongly recommended that each DEX market aim to use a unique HTTP port and that participants of the same DEX market use the same port.
-- `lisk_dex_foo_clsk_http_api` (replace `foo` with the relevant blockchain symbol)
-- `dexModuleAlias` (in `lisk_dex_foo_clsk`, replace `foo` with the relevant blockchain symbol) - This needs to point to the module name of the DEX market on your node.
+- `capitalisk_dex_foo_clsk_http_api` (replace `foo` with the relevant blockchain symbol)
+- `dexModuleAlias` (in `capitalisk_dex_foo_clsk`, replace `foo` with the relevant blockchain symbol) - This needs to point to the module name of the DEX market on your node.
 
 ## 3. Start your node
 

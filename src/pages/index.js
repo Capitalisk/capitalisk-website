@@ -19,7 +19,7 @@ const features = [
             website
           </a>
           ,{' '}
-          <a href='https://github.com/Capitalisk/lisk-dex' target='_blank'>
+          <a href='https://github.com/Capitalisk/capitalisk-dex' target='_blank'>
             GitHub
           </a>
           ). The goal of Capitalisk is to allow any community, anywhere in the

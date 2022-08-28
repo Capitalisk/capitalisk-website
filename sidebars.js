@@ -8,14 +8,16 @@ module.exports = {
       // 'learn-glossary',
       'learn-interconnectable-blockchains',
     ],
-    'Setup': [
+    'Setup a Capitalisk node': [
       'guide-set-up',
       'guide-set-up-ldem',
-      'guide-create-multisig-account',
     ],
-    'Launch a blockchain': [
+    'Launch a cryptocurrency': [
       'guide-launch-custom-blockchain',
       'guide-join-custom-blockchain',
+    ],
+    'Launch a DEX market': [
+      'guide-create-multisig-account',
       'guide-launch-custom-dex-market',
       'guide-join-custom-dex-market',
       'guide-set-up-dex-http-api',

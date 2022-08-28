@@ -13,4 +13,4 @@ The Capitalisk blockchain ideology is giving the incentive to focus on your prod
 
 ## LDEX
 
-LDEX was founded to trade between tokens. A market can be [launched](launch-custom-dex-market) in a matter of minutes if it's based of the [`ldpos-chain`](https://github.com/Capitalisk/ldpos-chain) module.
+LDEX was founded to trade between tokens. A market can be [launched](/docs/launch-custom-dex-market) in a matter of minutes if it's based of the [`ldpos-chain`](https://github.com/Capitalisk/ldpos-chain) module.

@@ -35,15 +35,15 @@ Since a Capitalisk node already supports the `clsk` blockchain by default, you o
 
 Once you have set up the relevant chain module and your node is in sync with both blockchains (base chain and quote chain), you can start setting up your DEX market.
 
-### 1.3. The lisk-dex module
+### 1.3. The capitalisk-dex module
 
 Once you have an LDEM node set up, navigate to the node's main directory (e.g. the `capitalisk-core` directory), then execute the following command:
 
 ```shell script
-npm install lisk-dex
+npm install capitalisk-dex
 ```
 
-This will install the `lisk-dex` module which will allow your node to operate as a DEX node.
+This will install the `capitalisk-dex` module which will allow your node to operate as a DEX node.
 
 ### 1.4. LDPoS Commander CLI
 
@@ -89,9 +89,9 @@ Inside this file, you should find a field called `modules` which is an array of 
 You will need to add the following object inside the `modules` array alongside existing entries:
 
 ```json
-"lisk_dex_foo_clsk": {
+"capitalisk_dex_foo_clsk": {
   "moduleEnabled": true,
-  "modulePath": "node_modules/lisk-dex",
+  "modulePath": "node_modules/capitalisk-dex",
   "passiveMode": false,
   "dexEnabledFromHeight": 12345,
   "signatureBroadcastDelay": 15000,
@@ -156,7 +156,7 @@ Make sure that each module object inside the `modules` array is separated by a c
 
 In the above object, you will need to substitute `foo` with the symbol of your custom chain throughout:
 
-- The module name (`lisk_dex_foo_clsk`)
+- The module name (`capitalisk_dex_foo_clsk`)
 - The value of `orderBookSnapshotFilePath` (`./dex-snapshot-foo-clsk.json`)
 - The value of `orderBookSnapshotBackupDirPath` (`./dex-snapshot-foo-clsk-backups`)
 - The `chains.foo` property (the `foo` property inside the `chains` object)
@@ -216,8 +216,8 @@ pm2 logs ldem-node
 ```
 
 If you see a lot of error messages, it could be an indication that something went wrong.
-The logs should also tell you which module the message comes from - You should mostly concern yourself with messages from the `lisk_dex_foo_clsk` module.
-You can change the `fileLogLevel` and `consoleLogLevel` in the `lisk_dex_foo_clsk` module config to `debug` or `error` depending on your requirements. Detailed logs consume more disk space.
+The logs should also tell you which module the message comes from - You should mostly concern yourself with messages from the `capitalisk_dex_foo_clsk` module.
+You can change the `fileLogLevel` and `consoleLogLevel` in the `capitalisk_dex_foo_clsk` module config to `debug` or `error` depending on your requirements. Detailed logs consume more disk space.
 
 ## 6. Get other nodes to join your new DEX federation
 

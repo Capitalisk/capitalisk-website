@@ -60,9 +60,9 @@ You will need to add the DEX market's module config object (which should be prov
 The object might look like this (though it will likely have some different values and properties):
 
 ```json
-"lisk_dex_foo_clsk": {
+"capitalisk_dex_foo_clsk": {
   "moduleEnabled": true,
-  "modulePath": "node_modules/lisk-dex",
+  "modulePath": "node_modules/capitalisk-dex",
   "passiveMode": false,
   "dexEnabledFromHeight": 12345,
   "signatureBroadcastDelay": 15000,
