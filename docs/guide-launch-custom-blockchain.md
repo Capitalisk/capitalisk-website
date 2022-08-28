@@ -133,7 +133,9 @@ It's recommended that you drop it at the following relative path:
 capitalisk-core/genesis/mainnet/foo-genesis.json
 ```
 
-Note that `capitalisk-core` is the directory where your node's source code is located.
+:::note
+`capitalisk-core` is the directory where your node's source code is located.
+:::
 
 ## 3. Create a new database
 
@@ -194,7 +196,9 @@ In the above object, you will need to substitute `foo` with the symbol of your c
 - The value of `genesisPath` (`../../genesis/mainnet/foo-genesis.json`)
 - The value of `components.logger.logFileName` (`logs/mainnet/foo.log`)
 
-Note that the `genesisPath` is relative to the module's code - This is why the path start with `../../`. Alternatively, you can use an absolute path starting with `/`; so long as it points to your `foo-genesis.json` file on the node.
+:::note
+The `genesisPath` is relative to the module's code - This is why the path start with `../../`. Alternatively, you can use an absolute path starting with `/`; so long as it points to your `foo-genesis.json` file on the node.
+:::
 
 If you're using SQLite instead of Postgres, the object under `dal` should look like this instead:
 
