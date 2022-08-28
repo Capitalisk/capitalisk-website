@@ -14,7 +14,7 @@ const features = [
       <>
         <p>
           Capitalisk (CLSK) is a cryptocurrency and a multi-blockchain ecosystem
-          built on top of Lisk DEX (
+          built on top of Capitalisk DEX (
           <a href='https://ldex.trading/' target='_blank'>
             website
           </a>
@@ -118,7 +118,7 @@ function Home() {
               <div className='text-white'>
                 Capitalisk is an energy-efficient Delegated Proof of Stake (DPoS) blockchain
                 which is resistant to quantum computing attacks.
-                Capitalisk is centered around Lisk DEX; a technology which allows any group of people to launch
+                Capitalisk is centered around Capitalisk DEX; a technology which allows any group of people to launch
                 decentralized markets for trading across any blockchain within the ecosystem.
               </div>
               <div className={styles.buttons}>

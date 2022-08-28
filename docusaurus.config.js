@@ -153,7 +153,7 @@ module.exports = {
     ],
     plugins: ['docusaurus-plugin-sass'],
     customFields: {
-        metaDescription: 'Capitalisk is energy-efficient DPoS blockchain. Allows anyone to launch decentralized crypto.' +
-            ' Easily Integrate crypto market with lisk DEX ecosystem. Resistant to quantum computing attacks'
+        metaDescription: 'Capitalisk is an energy-efficient DPoS blockchain. Allows any group of people to launch a decentralized cryptocurrency.' +
+            ' Easily integrate crypto markets with Capitalisk DEX ecosystem. Resistant to quantum computing attacks'
     }
 };
