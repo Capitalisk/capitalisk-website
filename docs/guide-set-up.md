@@ -158,7 +158,7 @@ npm install ldpos-sqlite-dal --save
 ```json title="config.js"
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
-  "genesisPath": "../../genesis/mainnet/genesis.json",
+  "genesisPath": "genesis/mainnet/genesis.json",
   "keyIndexDirPath": "data",
   "components": {
     "dal": {
@@ -383,7 +383,7 @@ In the `config.json` file:
 ...
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
-  "genesisPath": "../../genesis/mainnet/genesis.json",
+  "genesisPath": "genesis/mainnet/genesis.json",
   "keyIndexDirPath": "data",
   "forgingCredentials": [
     {

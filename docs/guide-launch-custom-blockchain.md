@@ -166,7 +166,7 @@ You will need to add the following object inside the array alongside existing en
 ```json
 "foo_chain": {
   "modulePath": "node_modules/ldpos-chain",
-  "genesisPath": "../../genesis/mainnet/foo-genesis.json",
+  "genesisPath": "genesis/mainnet/foo-genesis.json",
   "components": {
     "logger": {
       "logFileName": "logs/mainnet/foo.log",
@@ -174,13 +174,13 @@ You will need to add the following object inside the array alongside existing en
       "fileLogLevel": "error"
     },
     "dal": {
-      "libPath": "../ldpos-knex-dal",
+      "libPath": "node_modules/ldpos-pg-dal",
       "client": "pg",
       "connection": {
         "host": "127.0.0.1",
-        "user" : "postgres",
-        "password" : "password",
-        "database" : "capitalisk_main",
+        "user": "postgres",
+        "password": "password",
+        "database": "capitalisk_main",
         "port": "5432"
       }
     }
@@ -193,18 +193,14 @@ Make sure that each module object inside the `modules` array is separated by a c
 In the above object, you will need to substitute `foo` with the symbol of your custom chain throughout:
 
 - The module name (`foo_chain`)
-- The value of `genesisPath` (`../../genesis/mainnet/foo-genesis.json`)
+- The value of `genesisPath` (`genesis/mainnet/foo-genesis.json`)
 - The value of `components.logger.logFileName` (`logs/mainnet/foo.log`)
-
-:::note
-The `genesisPath` is relative to the module's code - This is why the path start with `../../`. Alternatively, you can use an absolute path starting with `/`; so long as it points to your `foo-genesis.json` file on the node.
-:::
 
 If you're using SQLite instead of Postgres, the object under `dal` should look like this instead:
 
 ```json
 "dal": {
-  "libPath": "../ldpos-knex-dal",
+  "libPath": "node_modules/ldpos-pg-dal",
   "client": "sqlite3",
   "connection": {
     "filename": "foo-db.sqlite3"

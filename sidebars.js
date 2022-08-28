@@ -8,7 +8,7 @@ module.exports = {
       'learn-glossary',
       'learn-interconnectable-blockchains',
     ],
-    'Node setup': [
+    'Setup': [
       'guide-set-up',
       'guide-set-up-ldem',
       'guide-create-multisig-account',

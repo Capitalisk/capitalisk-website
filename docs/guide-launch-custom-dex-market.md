@@ -114,7 +114,7 @@ You will need to add the following object inside the `modules` array alongside e
   "chains": {
     "clsk": {
       "moduleAlias": "capitalisk_chain",
-      "chainCryptoLibPath": "../ldpos-chain-crypto",
+      "chainCryptoLibPath": "node_modules/ldpos-chain-crypto",
       "multisigAddress": "7929826179931699287L",
       "memberAddress": "4738410848285516033L",
       "passphrase": "gorilla fancy token now rabbit orphan exist orbit essay butter rug grape",
@@ -132,7 +132,7 @@ You will need to add the following object inside the `modules` array alongside e
     },
     "foo": {
       "moduleAlias": "foo_chain",
-      "chainCryptoLibPath": "../ldpos-chain-crypto",
+      "chainCryptoLibPath": "node_modules/ldpos-chain-crypto",
       "multisigAddress": "6535469681290206175L",
       "memberAddress": "10670116278626911259L",
       "passphrase": "phrase reduce peanut industry zoo deny toilet gasp fancy material claw resist",

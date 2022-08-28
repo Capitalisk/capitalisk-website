@@ -85,7 +85,7 @@ The object might look like this (though it will likely have some different value
 ```json
 "foo_chain": {
   "modulePath": "node_modules/ldpos-chain",
-  "genesisPath": "../../genesis/mainnet/foo-genesis.json",
+  "genesisPath": "genesis/mainnet/foo-genesis.json",
   "components": {
     "logger": {
       "logFileName": "logs/mainnet/foo.log",
@@ -93,13 +93,13 @@ The object might look like this (though it will likely have some different value
       "fileLogLevel": "error"
     },
     "dal": {
-      "libPath": "../ldpos-knex-dal",
+      "libPath": "node_modules/ldpos-pg-dal",
       "client": "pg",
       "connection": {
         "host": "127.0.0.1",
-        "user" : "postgres",
-        "password" : "password",
-        "database" : "capitalisk_main",
+        "user": "postgres",
+        "password": "password",
+        "database": "capitalisk_main",
         "port": "5432"
       }
     }
@@ -114,7 +114,7 @@ If you want to use SQLite instead of Postgres, the object under `dal` should loo
 
 ```json
 "dal": {
-  "libPath": "../ldpos-knex-dal",
+  "libPath": "node_modules/ldpos-pg-dal",
   "client": "sqlite3",
   "connection": {
     "filename": "foo-db.sqlite3"

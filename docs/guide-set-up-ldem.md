@@ -68,7 +68,7 @@ Inside your node's main working directory, there should be a file called `config
 ```json
 "capitalisk_chain": {
   "modulePath": "node_modules/ldpos-chain",
-  "genesisPath": "../../genesis/mainnet/clsk-genesis.json",
+  "genesisPath": "genesis/mainnet/clsk-genesis.json",
   "components": {
     "logger": {
       "logFileName": "logs/mainnet/clsk.log",
@@ -76,13 +76,13 @@ Inside your node's main working directory, there should be a file called `config
       "fileLogLevel": "error"
     },
     "dal": {
-      "libPath": "../ldpos-knex-dal",
+      "libPath": "node_modules/ldpos-pg-dal",
       "client": "pg",
       "connection": {
         "host": "127.0.0.1",
-        "user" : "postgres",
-        "password" : "password",
-        "database" : "capitalisk_main",
+        "user": "postgres",
+        "password": "password",
+        "database": "capitalisk_main",
         "port": "5432"
       }
     }
@@ -95,7 +95,6 @@ Make sure that each object in your `config.json` file is separated with a comma 
 You will need to modify the properties above inside the `dal.connection` object to make it point to your Postgres database; make sure that the `host`, `user`, `password` and `port` properties are correct based on your node's current setup.
 
 Make sure that the `genesisPath` property points to the path of the `clsk-genesis.json` file which you created in step 2 (default above should be fine in most cases).
-All paths in this module's config are relative to the `modulePath`; in this case; `node_modules/ldpos-chain/`.
 
 ## 6. Restart your node
 

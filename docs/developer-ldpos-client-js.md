@@ -48,11 +48,11 @@ touch index.js
 
 1. Open the `index.js` file:
 
-:::danger
+<!-- :::danger
 
 TODO: Implement Faucet feature.
 
-:::
+::: -->
 
 ```js title="index.js"
 const ldposClient = require('ldpos-client');
