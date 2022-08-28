@@ -8,7 +8,7 @@ module.exports = {
       // 'learn-glossary',
       'learn-interconnectable-blockchains',
     ],
-    'Setup a Capitalisk node': [
+    'Launch a Capitalisk node': [
       'guide-set-up',
       'guide-set-up-ldem',
     ],
