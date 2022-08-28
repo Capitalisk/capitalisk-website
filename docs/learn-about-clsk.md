@@ -5,7 +5,7 @@ sidebar_label: About Capitalisk
 slug: /about-clsk
 ---
 
-Capitalisk was founded by the desire to create interconnectable chains and give the ability to easily setup interoperable a market and blockchains and have an adhocratic ecosystem. Although chains can be ran completely isolated. The incentive is that developers build great things, launch their own dedicated token and integrate with our ecosystem.
+Capitalisk was founded by the desire to create interconnectable chains and give the ability to easily setup interoperable markets and blockchains and have an adhocratic ecosystem. Although chains can be ran completely isolated. The incentive is that developers build great things, launch their own dedicated token and integrate with our ecosystem.
 
 ## Philosophy
 
