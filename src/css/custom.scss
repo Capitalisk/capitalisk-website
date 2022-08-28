@@ -120,7 +120,8 @@ h6,
 .external-nav-item {
   background-color: var(--ifm-color-primary);
   color: white;
-  margin-left: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 5px;
   font-weight: 600;
   padding: 8px 24px;
@@ -135,8 +136,8 @@ h6,
   color: white;
 }
 
-.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-  margin-left: 12px;
+.colorModeToggle_DEke, .toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  margin-left: 7px;
 }
 
 .navbar__brand {
