@@ -5,11 +5,11 @@ sidebar_label: About Capitalisk
 slug: /about-clsk
 ---
 
-Capitalisk was founded by the desire to create interconnectable chains and give the ability to easily setup interoperable markets and blockchains and have an adhocratic ecosystem. Although chains can be ran completely isolated. The incentive is that developers build great things, launch their own dedicated token and integrate with our ecosystem.
+Capitalisk was founded by the desire to create interconnectable blockchains and give communities the ability to easily setup decentralized markets between them. Blockchains in the Capitalisk ecosystem can be fully isolated from each other. The goal is to give developers an incentive to build great project, launch their own dedicated token and integrate it within our ecosystem.
 
 ## Philosophy
 
-The Capitalisk blockchain ideology is giving the incentive to focus on your product and launch it within the Capitalisk ecosystem. Unlike ETH, where fees are inherently expensive; Capitalisk incentivizes to launch custom tokens. Products will have full control of their ecosystems. Capitalisk merely provides the tools to do so. We strongly believe democratized chains and markets.
+The Capitalisk blockchain ideology is about giving you the incentive to focus on your product and launch it within the Capitalisk ecosystem. Unlike ETH, where fees are unavoidably high; Capitalisk enables you to launch your token on a separate blockchain which is only loosely connected to the Capitalisk mainchain. Communities will have full control of their ecosystems. Capitalisk merely provides the tools to do so. We strongly believe in democratized chains and markets.
 
 ## LDEX
 
