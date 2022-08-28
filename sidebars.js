@@ -12,7 +12,7 @@ module.exports = {
       'guide-set-up',
       'guide-set-up-ldem',
     ],
-    'Launch a cryptocurrency': [
+    'Launch a token': [
       'guide-launch-custom-blockchain',
       'guide-join-custom-blockchain',
     ],
