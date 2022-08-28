@@ -5,7 +5,7 @@ module.exports = {
       'learn-ldpos-wallet',
       'learn-unique-features',
       'learn-fees-on-clsk',
-      'learn-glossary',
+      // 'learn-glossary',
       'learn-interconnectable-blockchains',
     ],
     'Setup': [
