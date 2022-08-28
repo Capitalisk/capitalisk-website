@@ -164,3 +164,34 @@ h6,
     margin-right: 20%;
   }
 }
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gilroy-Bold'), url('/static/fonts/Gilroy-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gilroy-Heavy';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gilroy-Heavy'), url('/static/fonts/Gilroy-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gilroy-Light';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gilroy-Light'), url('/static/fonts/Gilroy-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gilroy-Medium';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gilroy-Medium'), url('/static/fonts/Gilroy-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gilroy-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gilroy-Regular'), url('/static/fonts/Gilroy-Bold.woff') format('woff');
+}
