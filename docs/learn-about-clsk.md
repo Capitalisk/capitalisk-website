@@ -9,7 +9,7 @@ Capitalisk was founded out of a need to create interconnectable blockchains by g
 
 ## Philosophy
 
-The Capitalisk blockchain ideology is about giving you the incentive to focus on your product and launch it within the Capitalisk ecosystem. Unlike ETH, where fees are unavoidably high; Capitalisk enables you to launch your token on a separate blockchain which is only loosely connected to the Capitalisk mainchain. Communities will have full control of their ecosystems. Capitalisk merely provides the tools to do so. We strongly believe in democratized chains and markets.
+The Capitalisk blockchain ideology is about giving you the incentive to focus on your product and launch it within the Capitalisk ecosystem. Unlike ETH, where fees are unavoidably high; Capitalisk enables you to launch your token on a separate blockchain which is only loosely connected to the Capitalisk mainchain. Communities will have full control of their ecosystems. Capitalisk merely provides the tools. We strongly believe in democratized blockchains and markets.
 
 ## LDEX
 
