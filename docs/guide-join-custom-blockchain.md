@@ -39,7 +39,7 @@ sudo npm install -g ldpos-commander
 Check that the installation was successful using the command:
 
 ```shell script
-ldpos -v
+ldpos version
 ```
 
 If the command outputs a version number, it means that the installation was successful.
