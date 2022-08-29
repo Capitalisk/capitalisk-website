@@ -5,7 +5,7 @@ sidebar_label: About Capitalisk
 slug: /about-clsk
 ---
 
-Capitalisk was founded out of a need to create interconnectable blockchains and to give communities the ability to easily setup decentralized markets between them. Blockchains in the Capitalisk ecosystem can be fully isolated from each other. The goal is to give developers an incentive to build great project, launch their own dedicated token and integrate it within our ecosystem.
+Capitalisk was founded out of a need to create interconnectable blockchains by giving communities the ability to easily setup decentralized markets between them. Blockchains in the Capitalisk ecosystem can be fully isolated from each other. The goal is to give developers an incentive to build great project, launch their own dedicated token and integrate it within our ecosystem.
 
 ## Philosophy
 
