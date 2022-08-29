@@ -38,6 +38,12 @@ module.exports = {
                 // },
                 {
                     to: 'wallet',
+                    label: 'CLIENTS',
+                    position: 'right',
+                    className: 'nav-item',
+                },
+                {
+                    to: 'https://capitalisk.com/wallet/ldpos/#/',
                     label: 'WALLET',
                     position: 'right',
                     className: 'external-nav-item',
