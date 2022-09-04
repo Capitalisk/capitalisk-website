@@ -65,12 +65,7 @@ const features = [
         </p>
         <p>
           Capitalisk solves the blockchain scalability problem by facilitating
-          flexible hierarchical relationships between different blockchains with
-          Capitalisk itself launching as a sidechain of Lisk (
-          <a href='https://lisk.io/' target='_blank'>
-            https://lisk.io/
-          </a>
-          ).
+          flexible hierarchical relationships between different blockchains.
         </p>
         <p>
           See the <a href='/whitepaper'>whitepaper</a> for a more detailed
