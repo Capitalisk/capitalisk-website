@@ -44,15 +44,15 @@ npm install ldpos-client
 touch index.js
 ```
 
-## 2. Create a testnet wallet
+## 2. Create a testnet wallet and make a transaction
 
 1. Open the `index.js` file:
 
-<!-- :::danger
+:::danger
 
-TODO: Implement Faucet feature.
+To receive testnet wallet tokens join our [Discord](https://discord.com/invite/Nrf33ck3Qq) and type `!faucet <address>` in the #faucet channel. You will receive 100 CLSK tokens. Note that this feature is limited to a one time use per 7 days. If you need any additional tokens please reach out to an admin.
 
-::: -->
+:::
 
 ```js title="index.js"
 const ldposClient = require('ldpos-client');
