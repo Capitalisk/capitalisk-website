@@ -11,5 +11,6 @@ slug: /unique-features
 - Multiprocess engine, scales over cores.
 - Custom module templating; spawn multiple different instances which can run alongside each other in parallel on different CPU cores.
 - Instant block finality with no possibility of rollbacks.
-- Support dynamic fees.
+- Supports dynamic fees.
+- Instant public key, even before passphrase creation.
 
