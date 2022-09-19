@@ -1,6 +1,6 @@
---
+---
 slug: upcoming-months
-title: Extending the LDPoS ecosystem for broader side-chain adoption
+title: Capitalisk's strategy
 author: Maarten Coppens
 author_title: Co-Founder @ Capitalisk
 author_url: https://github.com/maarteNNNN
