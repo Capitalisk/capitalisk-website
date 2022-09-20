@@ -32,7 +32,7 @@ One of the areas we plan to focus on will be to improve the app's ability to han
 
 ### Capitalisk's future products
 
-Aside from the `ldpos-wallet`, we have been discussing making a marketplace for projects. As we put side-chain projects in the center of our ecosystem we have been brainstorming about creating a place that people can post projects on. One thought has been that investors can invest in said projects in exchange are rewarded with a portion of said token. We ideally aim to deploy a token in a matter of a few minutes, by using a default batch of genesis delegates. However if the user so desires, they can provide their own nodes, this however means that the setup process will be prolonged.
+Aside from the `ldpos-wallet`, we have been discussing making a marketplace for projects. As we put side-chain projects at the center of our ecosystem, we have been brainstorming about creating a place that people can post projects on. One thought has been that investors can invest in said projects and in exchange are rewarded with a portion of said tokens. We ideally aim to deploy a token in a matter of a few minutes, by using a default batch of genesis delegates. However if the user so desires, they can provide their own nodes, this however means that the setup process will be prolonged.
 
 Due to our new marketplace ambition we plan to provide consultancy in the initial stages. Any project can get in contact with us to implement any app or idea that involves our technology. We will make a page on our website with a contact form for that soon.
 
