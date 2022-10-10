@@ -83,13 +83,7 @@ Postgres is the recommended choice.
 
 ## 5.1 Install Postgres
 
-### 5.1.1 Installing via Ubuntu repositories
-
-```sh
-sudo apt install postgresql
-```
-
-### 5.1.2 Installing via PostgreSQL repositories
+### 5.1.1 Installing via PostgreSQL repositories
 
 - Follow https://www.postgresql.org/download/ to install Postgres on linux/windows/mac.
 
@@ -111,7 +105,7 @@ sudo apt-get update
 sudo apt-get -y install postgresql
 ```
 
-## 5.1.3 Set up the Postgres database for the node
+## 5.1.2 Set up the Postgres database for the node
 
 - Launch the postgres server if it's not already running (you can check with `sudo ps -e | grep postgres` command):
 
@@ -151,7 +145,7 @@ sudo service postgresql restart
 
 ## 5.2 Installing SQLite
 
-While inside the `capitalisk-core` directory:
+Skip this step if you have already installed postgres. Otherwise, while inside the `capitalisk-core` directory:
 
 - Install `ldpos-sqlite-dal`:
 
@@ -382,6 +376,8 @@ You will need to truncate this logs via `sudo crontab -e`!
 </details>
 
 ### 9. Adding a forging passphrase
+
+This step is only necessary if you want to run a delegate node.
 
 In the `config.json` file:
 
