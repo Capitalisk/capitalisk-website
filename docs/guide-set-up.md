@@ -113,6 +113,12 @@ sudo apt-get -y install postgresql
 
 ## 5.1.3 Set up the Postgres database for the node
 
+- Launch the postgres server if it's not already running (you can check with `sudo ps -e | grep postgres` command):
+
+```shell script
+sudo service postgresql start
+```
+
 - Log into postgres:
 
 ```shell script
