@@ -36,10 +36,15 @@ Follow the guide from [Node.js](https://nodejs.org/en/download/package-manager/)
 
 ## 3. Install Git
 
+
 - Full instructions can be found here: https://github.com/git-guides/install-git
 
 ```shell script
-sudo apt-get install git-all
+sudo apt update
+```
+
+```shell script
+sudo apt install git-all
 ```
 
 ## 4. Clone and set up the capitalisk-core node
