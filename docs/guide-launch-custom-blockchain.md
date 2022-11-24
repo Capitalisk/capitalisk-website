@@ -200,7 +200,7 @@ If you're using SQLite instead of Postgres, the object under `dal` should look l
 
 ```json
 "dal": {
-  "libPath": "node_modules/ldpos-pg-dal",
+  "libPath": "node_modules/ldpos-sqlite-dal",
   "client": "sqlite3",
   "connection": {
     "filename": "foo-db.sqlite3"

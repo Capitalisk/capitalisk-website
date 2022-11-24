@@ -114,7 +114,7 @@ If you want to use SQLite instead of Postgres, the object under `dal` should loo
 
 ```json
 "dal": {
-  "libPath": "node_modules/ldpos-pg-dal",
+  "libPath": "node_modules/ldpos-sqlite-dal",
   "client": "sqlite3",
   "connection": {
     "filename": "foo-db.sqlite3"
