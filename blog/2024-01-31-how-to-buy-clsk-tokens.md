@@ -23,7 +23,7 @@ You don't need to download any software to buy CLSK tokens; all the steps can be
     - Copy your new wallet address which starts with the letters `lsk`.
     - Keep this window and screen/modal open for later.
 
-3. In a new browser window or tab, open your cryptocurrency exchange website, withdraw your LSK tokens into the on-chain wallet which you generated in step 2 above. Make sure you provide the correct wallet address as the withdrawal address.
+3. In a different browser window or tab, open your cryptocurrency exchange website, withdraw your LSK tokens into the on-chain wallet which you generated in step 2 above. Make sure you provide the correct wallet address as the withdrawal address.
 
 4. Create a new CLSK wallet on the Capitalisk blockchain using LDEX UI:
     - Return to LDEX UI from step 2 with the `Sign in` screen/modal still open. Under the `Passphrase for CLSK` text area (the top section), click on the `Generate wallet` button.
