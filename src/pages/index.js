@@ -117,8 +117,8 @@ function Home() {
                 decentralized markets for trading across any blockchain within the ecosystem.
               </div>
               <div className={styles.buttons}>
-                <Link className={styles.button} to={useBaseUrl('docs/')}>
-                  Get Started
+                <Link className={styles.button} to={useBaseUrl('blog/how-to-buy')}>
+                  How to buy?
                 </Link>
               </div>
             </div>
