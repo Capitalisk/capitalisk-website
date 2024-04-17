@@ -96,6 +96,19 @@ function Feature({ imageUrl, title, description }) {
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
+
+  function toggleMusic() {
+    let musicToggle = document.querySelector('.music-toggle');
+    let audioEl = document.querySelector('.music');
+    if (audioEl.paused) {
+      audioEl.currentTime = 0;
+      audioEl.play();
+      musicToggle.classList.remove('paused');
+    } else {
+      audioEl.pause();
+      musicToggle.classList.add('paused');
+    }
+  }
   return (
     <Layout
       description={`${siteConfig.customFields.metaDescription}`}
@@ -109,7 +122,13 @@ function Home() {
               className='flex align-center row'
               style={{ width: '400px', textAlign: 'left', marginRight: '5rem' }}
             >
-              <h1 className={styles.heroSubtitle}>{siteConfig.tagline}</h1>
+              <div>
+                <h1 className={styles.heroSubtitle}>{siteConfig.tagline}</h1>
+                <span className="music-toggle paused" onClick={toggleMusic}>&#9835;</span>
+                <audio className="music">
+                  <source src="https://saasufy.com/sid8002/files/Music/08f9a0b9-992f-493b-ba3d-1f5bfd0e1313/file" type="audio/mp3" />
+                </audio>
+              </div>
               <div className='text-white'>
                 Capitalisk is an energy-efficient Delegated Proof of Stake (DPoS) blockchain
                 which is resistant to quantum computing attacks.

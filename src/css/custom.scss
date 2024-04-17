@@ -120,6 +120,19 @@ h6,
   }
 }
 
+.music-toggle {
+  position: absolute;
+  cursor: pointer;
+  font-size: 50px;
+  line-height: 50px;
+  top: 10px;
+  right: 25px;
+}
+
+.music-toggle.paused {
+  opacity: 0.5;
+}
+
 .react-toggle {
   margin-left: 1rem;
 }
