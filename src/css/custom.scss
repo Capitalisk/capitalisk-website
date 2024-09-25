@@ -166,6 +166,12 @@ h6,
   height: 2.5rem;
 }
 
+@media (max-width: 1100px) {
+  .c-logo-image {
+    display: none;
+  }
+}
+
 // MOBILE
 @media screen and (max-width: 996px) {
   .external-nav-item {
