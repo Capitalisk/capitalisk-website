@@ -125,9 +125,6 @@ function Home() {
               <div>
                 <h1 className={styles.heroSubtitle}>{siteConfig.tagline}</h1>
                 <span className="music-toggle paused" onClick={toggleMusic}>&#9835;</span>
-                <audio className="music">
-                  <source src="https://saasufy.com/sid8002/files/Music/08f9a0b9-992f-493b-ba3d-1f5bfd0e1313/file" type="audio/mp3" />
-                </audio>
               </div>
               <div className='text-white'>
                 Capitalisk is an energy-efficient Delegated Proof of Stake (DPoS) blockchain
